@@ -35,8 +35,8 @@ function Navtop() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">About</Nav.Link>
+                  <Nav.Link href="/Home">Home</Nav.Link>
+                  <Nav.Link href="/ProductDetailsPage">Product</Nav.Link>
                   <NavDropdown
                     title="Service"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}

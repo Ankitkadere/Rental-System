@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: #d63384;
+  background-color: rgba(145, 19, 156, 0.76);
   color: white;
   font-family: Arial, sans-serif;
   padding: 3%;
@@ -15,7 +15,6 @@
 .newsletter {
   display: flex;
   flex-direction: row;
-
   padding: 15px 0px;
   justify-content: space-between;
   border-radius: 10px;
@@ -37,7 +36,7 @@
 }
 
 .newsletter input {
-  padding: 10px 70px;
+  padding: 10px 50px;
   border: none;
   border-radius: 10px;
   flex: 1;
@@ -46,9 +45,10 @@
 }
 
 .newsletter button {
-  background: #880e4f;
+  background: rgba(145, 19, 156, 0.76);
   padding: 10px;
-  border: none;
+  border: white solid 0.1px;
+  margin: 0px 2px;
   border-radius: 10px;
   color: white;
   cursor: pointer;
@@ -62,7 +62,7 @@
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 50px;
+  gap: 20px;
 }
 
 /* Footer Logo */
@@ -134,17 +134,20 @@
 .footer-bottom {
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   background: black;
-  padding: 10px 3%;
+  padding: 5px 3%;
+  text-align: center;
+  align-items: center;
   color: white;
   font-size: 12px;
 }
 
-.footer-payments img {
-  width: 16px;
-  height: 16px;
-  margin-left: 5px;
+.fcopyright {
+  text-align: center;
+  padding-top:1%;
+  align-items: center;
 }
 
 /* Responsive */
@@ -162,7 +165,8 @@
     align-items: center;
     text-align: center;
   }
-  
- 
-  
+  .footer-bottom {
+    display: flex;
+    flex-direction: row;
+  }
 }

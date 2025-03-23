@@ -1,0 +1,139 @@
+/* Container */
+.Buy {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+}
+
+/* Image */
+.Buy img {
+  width: 100%;
+  height: 300px;
+  object: cover;
+  border-radius: 8px;
+}
+
+/* Title */
+.Buy h1 {
+  font-size: 24px;
+  font-weight: bold rgba(145, 19, 156, 0.76);
+  color: rgba(145, 19, 156, 0.76);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Subtitle */
+.Buy p {
+  color: rgba(145, 19, 156, 0.76);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Labels */
+.Buy label {
+  font-weight: 700;
+  color: rgba(145, 19, 156, 0.76);
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input Fields */
+.Buy input,
+select,
+textarea {
+  width: 48%;
+  padding: 10px;
+  margin-right: 2%;
+  background:white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: border 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+.Buy input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgb(193, 90, 214);
+  outline: none;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+}
+
+/* Special Instructions */
+.Buy textarea {
+  resize: none;
+  height: 80px;
+}
+.fa {
+  display: flex;
+}
+
+/* Form Layout */
+.Buy .flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .flex-container {
+    flex-direction: row;
+  }
+  .flex-container input {
+    width: 48%;
+  }
+}
+
+/* Button */
+.Buy button {
+  background-color: rgba(145, 19, 156, 0.76);
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.Buy button:hover {
+  background-color: rgba(111, 23, 119, 0.76);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .Buy {
+    width: 100%;
+    padding: 15px;
+  }
+  /* Image */
+  .Buy img {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .Buy button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .Buy input,
+  select,
+  textarea {
+    width: 100%;
+    background:white;
+  }
+
+  .Buy .option {
+    display: flex;
+  }
+  .fa {
+    display: flex;
+  }
+}

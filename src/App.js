@@ -7,6 +7,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Footer from "./Component/Footer/Footer";
+import ProductDetailsPage from '../src/Pages/Fullproductdetails/Productfullpage';
+import ProductBuy from "./Pages/Buy/Buyproduct";
 function App() {
   return (
     <>
@@ -14,9 +16,12 @@ function App() {
         <Header />
         <Navtop />
         <Routes>
+          <Route exact={true} path="" element={<Home />} />
           <Route exact={true} path="/Home" element={<Home />} />
+          <Route exact={true} path="/ProductDetailsPage" element={<ProductDetailsPage />} />
+          <Route exact={true} path="/ProductBuy" element={<ProductBuy/>} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </>
   );

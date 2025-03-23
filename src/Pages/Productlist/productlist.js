@@ -4,6 +4,7 @@ import '../Productlist/Productlist.css';
 
 const products = [
   {
+    
     image:
       "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?fm=jpg&q=60&w=3000",
     title: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
@@ -14,6 +15,7 @@ const products = [
     brand: "NestFood",
   },
   {
+  
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScHyw180jWMmjk4JXSNrMuwZUUvaJBkED0bg&s",
     title: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
@@ -24,6 +26,7 @@ const products = [
     brand: "HealthyBites",
   },
   {
+ 
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScHyw180jWMmjk4JXSNrMuwZUUvaJBkED0bg&s",
     title: "Seeds of Change Organic Quinoa, Brown, & Red Ricee",
@@ -33,6 +36,8 @@ const products = [
     rating: 4.5,
     brand: "HealthyBites",
   }, {
+ 
+ 
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScHyw180jWMmjk4JXSNrMuwZUUvaJBkED0bg&s",
     title: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
@@ -43,6 +48,7 @@ const products = [
     brand: "HealthyBites",
   },
   {
+     
     image:
       "https://img.freepik.com/free-photo/assortment-pieces-cake_114579-79825.jpg?semt=ais_hybrid",
     title: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
@@ -53,6 +59,7 @@ const products = [
     brand: "SweetDelights",
   },
   {
+   
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2bjdjwJkFBsoJS3AdaB6b0lL8TR_Zz8GlHg&s",
     title: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
@@ -63,6 +70,7 @@ const products = [
     brand: "NestFood",
   },
   {
+  
     image: "https://img.lovepik.com/photo/50007/3966.jpg_wh860.jpg",
     title: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
     category: "Snack",
@@ -106,7 +114,7 @@ const PopularProducts = () => {
   return (
     <>
       <div className="gridbox">
-        <div className="grid">
+        <a href="ProductDetailsPage" className="grid">
           {products.map((product, index) => (
             <div className="card" key={index}>
               <span className="badge badge-hot">Hot</span>
@@ -148,7 +156,8 @@ const PopularProducts = () => {
               </div>
             </div>
           ))}
-        </div>
+   
+        </a>
       </div>
     </>
   );

@@ -1,0 +1,393 @@
+/* General Styles */
+.product-details {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f7fafc;
+  border-radius: 12px;
+}
+
+.product-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  gap: 20px;
+}
+
+.product-images img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.product-info h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(145, 19, 156, 0.76);
+  margin-bottom: 16px;
+}
+
+.product-info p {
+  color: #4a5568;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Price Styles */
+.product-info .price {
+  font-size: 1.5rem;
+  color: rgba(145, 19, 156, 0.76);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Specifications */
+.specifications {
+  margin-bottom: 5px;
+}
+
+.specifications h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.specifications ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-box: wrap;
+}
+
+.specifications li {
+  font-size: 16px;
+  color: #4a5568;
+  margin-bottom: 6px;
+  margin: 2px 4px;
+
+  border-radius: 20px;
+  flex-box: wrap;
+  padding: 0px 8px;
+}
+
+/* Availability */
+.flex .availability {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(128, 128, 128);
+  text-align: center;
+  padding-top: 10px;
+  align-items: center;
+  margin-left: 1%;
+}
+
+/* Product Variants */
+.product-variants {
+  margin-bottom: 6px;
+}
+
+.product-variants h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.product-variants ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-box: wrap;
+}
+
+.product-variants li {
+  font-size: 16px;
+  color: #4a5568;
+  margin-bottom: 6px;
+  margin: 2px 4px;
+  border-radius: 20px;
+  flex-box: wrap;
+  padding: 0px 8px;
+  text-align: center;
+  align-items: center;
+}
+
+/* Customer Reviews */
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+.cta-buttons .buybutton {
+  text-decoration: none; /* Corrected from text-style-type */
+  width: 50%;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  background-color: rgba(145, 19, 156, 0.76);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.cta-buttons .buybutton:hover {
+  background-color: rgba(
+    145,
+    19,
+    156,
+    1
+  ); /* Optional: Change background on hover */
+}
+
+.productpolicy {
+  background: white;
+}
+.productpolicy .shipping-info,
+.return-policy,
+.warranty,
+.payment-options {
+  background: white;
+  width: 24%;
+  border-radius: 20px;
+  text-align: center;
+}
+/* Shipping Information */
+.shipping-info {
+  margin-bottom: 20px;
+}
+
+.shipping-info h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.shipping-info p {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+/* Return & Refund Policy */
+.return-policy {
+  margin-bottom: 20px;
+}
+
+.return-policy h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.return-policy p {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+/* Warranty */
+.warranty {
+  margin-bottom: 20px;
+}
+
+.warranty h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.warranty p {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+/* Payment Options */
+.payment-options {
+  margin-bottom: 20px;
+}
+
+.payment-options h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.payment-options p {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+/* Related Products */
+.related-products {
+  margin-top: 40px;
+}
+
+.related-products h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.related-products ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.related-products li {
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 6px;
+}
+
+.related-products span {
+  font-weight: bold;
+  color: #38a169;
+}
+
+/* Social Sharing */
+.social-sharing {
+  margin-top: 40px;
+}
+
+.social-sharing h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.social-sharing .buybutton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #38a169;
+  color: white;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.social-sharing button:hover {
+  background-color: #2f855a;
+}
+
+/* FAQ */
+.faq {
+  margin-top: 40px;
+}
+
+.faq h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.faq ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.faq li {
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 12px;
+}
+
+.faq strong {
+  font-weight: bold;
+}
+
+.faq br {
+  margin-top: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .product-details {
+    flex-direction: column;
+  }
+
+  .product-info {
+    padding: 15px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .buybutton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details {
+    padding: 10px;
+  }
+
+  .product-images img {
+    height: 300px;
+  }
+  .flex .availability {
+    padding-top: 5px;
+  }
+
+  .product-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .product-info .price {
+    font-size: 1.25rem;
+  }
+  .cta-buttons {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    left: 0;
+    background: white;
+    border-top-right-radius: 10px; /* Corrected border radius */
+    border-top-left-radius: 10px; /* Corrected border radius */
+    padding: 8px 4px;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  }
+  .cta-buttons .buybutton {
+    width: 45vw;
+    padding: 6px 0px;
+  }
+  .productpolicy .shipping-info,
+  .return-policy,
+  .warranty,
+  .payment-options {
+    background: white;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
