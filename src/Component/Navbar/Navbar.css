@@ -1,39 +1,49 @@
-/* Navbar container styling */
+/* Global Reset & Defaults */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* Navbar Styling */
 .bg-body-tertiary {
   height: auto;
   position: sticky;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 100;
-  padding: 5px 0%;
-  position: sticky;
+  padding: 5px 2%;
   background-color: #f8f9fa !important;
   border-bottom: 1px solid #dee2e6;
 }
 
-/* Navbar brand styling */
+/* Navbar Brand */
 .navbar-brand {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #333 !important;
+  color: rgba(145, 19, 156, 0.76) !important;
 }
 
-/* Navbar toggler button */
+/* Navbar Toggler */
 .navbar-toggler {
   border: none;
   outline: none;
-}
-.navbar-toggler:hover {
-  border: none;
-  outline: none;
+  padding: 5px;
+  background-color: transparent;
 }
 
-/* Offcanvas sidebar styling */
+.navbar-toggler:hover {
+  background-color: rgba(145, 19, 156, 0.1);
+}
+
+/* Offcanvas Sidebar */
 .offcanvas {
   background-color: #ffffff;
 }
@@ -47,61 +57,109 @@
   font-weight: bold;
 }
 
-/* Navbar links */
+/* Navbar Links */
 .nav-link {
   color: #333 !important;
   font-size: 1rem;
-  transition: color 0.3s;
-  margin: 0px 3%;
+  transition: color 0.3s ease-in-out;
+  margin: 0 3%;
 }
 
 .nav-link:hover {
   color: rgba(145, 19, 156, 0.76) !important;
 }
 
-/* Dropdown menu styling */
+/* Dropdown Menu */
 .navbar .dropdown-menu {
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border: none;
-  outline: none;
 }
 
-/* Form input styling */
+/* Form Input */
 .form-control {
   width: 100%;
-  border-radius: 115px;
+  border-radius: 50px;
   border: 1px solid rgba(145, 19, 156, 0.76);
-  padding: 0px 8px;
-  border-color: rgba(145, 19, 156, 0.76);
+  padding: 8px 12px;
 }
 
-/* Search button styling */
+/* Search Button */
 .btn-outline-success {
   border-radius: 15px;
-  border-color: rgba(145, 19, 156, 0.76);
+  border: 1px solid rgba(145, 19, 156, 0.76);
   color: rgba(145, 19, 156, 0.76);
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-outline-success:hover {
   background-color: rgba(145, 19, 156, 0.76);
   color: #ffffff;
 }
-.logninput {
-  width: 30pc;
-}
 
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 12px;
-  }
+/* Responsive Design */
+@media screen and (max-width: 768px) {
   .bg-body-tertiary {
-    padding: 5px 2%;
+    padding: 2% 0px;
+  }
+  .mobileflex {
+    display: flex;
+    font-size: 10px;
+    margin: auto;
+    padding:0px 2%;
+ 
+  }
+  .mobile {
+    width: 100%;
+    padding: 0px;
+  }
+  .search {
+    border: none;
+    position:absolute;
+    margin-left:53%;
+    
+  }
+
+  .navbar-brand {
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgba(145, 19, 156, 0.76) !important;
+  }
+  .form-control {
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid rgba(145, 19, 156, 0.76);
+    padding: 0px 25px;
+  }
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    padding: 0px;
+    font-size:20px;
+  }
+  .navbar-toggler:focus {
+    border: none;
+    outline: none;
+  }
+  .navbar-toggler:hover {
+    border: none;
+    outline: none;
   }
   .moblies {
+    display: block;
+    font-size: 19px;
+    padding: 0px;
+  }
+  
+}
+
+@media screen and (min-width: 460px) {
+  .moblies {
     display: none;
-    width: 0px;
+    width: 0;
     overflow: hidden;
-    height: 0px;
+    height: 0;
   }
 }

@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .container {
@@ -35,13 +35,13 @@ body {
 .social-icons {
   display: flex;
   gap: 15px;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 /* Navigation */
 .navbar {
   background-color: rgb(145, 88, 88);
-  padding: 15px 0;
+  padding: 12px 0;
   color: black;
 }
 
@@ -49,18 +49,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 
 .logo {
-  height: 40px;
+  height: 4px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .nav-links li a {
@@ -107,7 +107,7 @@ body {
 .main-content {
   background: linear-gradient(to right, #f783ac, #e64980);
   color: white;
-  padding: 50px 0;
+  padding: 30px 0;
   text-align: center;
 }
 
@@ -115,64 +115,40 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
-.text-section {
-  max-width: 50%;
-}
+ 
 
 .text-section h1 {
-  font-size: 36px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .text-section p {
   margin-top: 10px;
 }
-
-.shop-button {
-  background-color: #d63384;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.shop-button:hover {
-  background-color: #c2185b;
-}
-
-.main-image {
-  height: 300px;
-  border-radius: 10px;
-}
-
+ 
 /* Recently Viewed */
 .recently-viewed {
   background-color: #e64980;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 12px;
-  }
+@media screen and (max-width: 460px) {
+
   .header {
     padding: 0px 0;
   }
 
   .header-content {
-    width: 98%;
+    width: 100%;
   }
   .social-icons {
     display: flex;
     gap: 15px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }

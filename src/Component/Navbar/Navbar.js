@@ -6,23 +6,32 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../Navbar/Navbar.css";
+import { FaSearch } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
 function Navtop() {
   return (
     <>
       {["xl"].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-8">
-          <Container fluid>
-            <Navbar.Brand href="#">Cake</Navbar.Brand>
-            <Form className="d-flex  moblies">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-1"
-                aria-label="Search"
-              />
-              <Button variant="outline-success moblies">Search</Button>
-            </Form>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-2">
+          <Container className="mobile" fluid>
+            <Navbar.Brand className="mobileflex flex  " href="">
+              Cake
+              <Form className="d-flex  moblies">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-0"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success moblies search">
+                  <FaSearch />{" "}
+                </Button>
+              </Form>
+              <Navbar.Toggle aria-controls={`${expand}`}>
+              <FaRegUser size={23} color="rgba(145, 19, 156, 0.76)" />
+              </Navbar.Toggle>
+              
+            </Navbar.Brand>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -50,7 +59,7 @@ function Navtop() {
                       Something else here
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link href="#action2">Link</Nav.Link> 
+                  <Nav.Link href="#action2">Link</Nav.Link>
                   <Nav.Link href="#action1">Home</Nav.Link>
                   <Nav.Link href="#action2">Link</Nav.Link>
                   <NavDropdown
@@ -69,7 +78,6 @@ function Navtop() {
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
-                  
                     type="search"
                     placeholder="Search"
                     className="me-2 logninput"

@@ -10,7 +10,7 @@ const Header = () => {
         <div className="container header-content">
           <div className="contact-info">
             <FaPhoneAlt /> <span>+91 9932105832</span>
-            <FaEnvelope className="ml-4" /> <span>info@giftyonline.com</span>
+            <FaEnvelope className="ml-12" /> <span>info@giftyonline.com</span>
           </div>
           <div className="social-icons">
             <FaFacebookF /> <FaTwitter /> <FaInstagram />
