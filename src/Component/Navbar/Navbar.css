@@ -100,7 +100,7 @@ body {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .bg-body-tertiary {
-    padding: 2% 0px;
+    padding: 3% 0px;
   }
   .mobileflex {
     display: flex;
@@ -116,7 +116,7 @@ body {
   .search {
     border: none;
     position:absolute;
-    margin-left:53%;
+    margin-left:58%;
     
   }
 
