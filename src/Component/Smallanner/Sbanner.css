@@ -1,0 +1,173 @@
+/* Container */
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+
+.sale-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sale-box {
+  width: 100%;
+  background-image: url("https://www.shutterstock.com/image-photo/celebration-birthday-cake-colorful-sprinkles-600nw-2275503965.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+  border-radius: 10px;
+  position: relative;
+  flex: 1;
+  color: white;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Styles */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: -10px;
+  text-shadow: 1.5px 1.5px black;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: -10px;
+  text-shadow: 1.5px 1.5px black;
+}
+
+/* Dotted Pattern */
+.dotted-pattern {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 5px);
+  gap: 3px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* Image Section */
+
+/* Discount Badge */
+.discount-badge {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  bottom: 2px;
+  right: 10px;
+  background: rgba(145, 19, 156, 0.76);
+  color: white;
+  color: black;
+  background: ;
+  padding: 8px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Limited Offer Badge */
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background:rgba(145, 19, 156, 0.76);
+  color: white;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Back to Top Button */
+.back-to-top-container {
+  display: none;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.back-to-top {
+  background: white;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.back-to-top:hover {
+  background: black;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .sale-section {
+    display: flex; /* Ensure flexbox is applied */
+    flex-direction: row;
+    gap: 30px; /* Optional: Adds spacing between elements */
+  }
+
+  .sale-box {
+    width: 160%;
+  }
+
+  /* Content Styles */
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* Dotted Pattern */
+  .dotted-pattern {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 5px);
+    gap: 3px;
+  }
+}
+.sale-section {
+  gap: 20px;
+}

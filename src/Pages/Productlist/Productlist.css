@@ -1,0 +1,250 @@
+/* General Styles */
+/* Container Styles */
+
+.popularproducts {
+  width: 100%;
+  margin: 0;
+  padding: 6px;
+  display: flex;
+  justify-content: Space-between;
+}
+
+/* Header Styles */
+.popularproducts h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #2d3748;
+}
+
+/* Flexbox for Navigation Links */
+.popularproducts .flex {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 1px; /* Adds spacing between items */
+  margin-bottom: 0px;
+}
+
+/* Optional: You can add a line height to the links to make them more readable */
+.popularproducts a {
+  line-height: 3;
+}
+
+/* Container Styles */
+
+.gridbox {
+  margin: auto;
+  padding: 2%;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* Header Styles */
+.gridbox h1,
+h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0px;
+  color: #2d3748;
+  text-align: justify;
+}
+
+/* Navigation Links Styles */
+.gridbox a {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.gridbox a:hover {
+  color: #2f855a;
+}
+
+/* Product Cards Grid */
+.gridbox .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  width: 100%;
+  border-radius: 10px;
+  margin: 0px;
+}
+
+/* Individual Product Card Styles */
+.gridbox .card {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 4px 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.gridbox .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.gridbox .card .badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+}
+
+.gridbox .card .badge-hot {
+  background-color: #f56565;
+}
+
+.gridbox .card .badge-sale {
+  background-color: #4299e1;
+}
+
+.card .badge-new {
+  background-color: rgba(145, 19, 156, 0.76);
+  color: white;
+}
+
+.card .badge-discount {
+  background-color: rgba(145, 19, 156, 0.76);
+  color: white;
+}
+
+/* Text Styles */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-yellow-500 {
+  color: rgba(145, 19, 156, 0.76);
+  margin: 0px;
+}
+
+.text-green-600 {
+  color: rgba(145, 19, 156, 0.76);
+}
+
+.text-gray-300 {
+  background-color: rgba(145, 19, 156, 0.76);
+  color: white;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.line-through {
+  margin-left: 4px;
+  margin-top: 1.6px;
+  text-decoration: line-through;
+}
+
+/* Button Styles */
+.button {
+  padding: 2px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  background-color: #f0fdf4;
+  background-color: rgba(145, 19, 156, 0.76);
+  color: white;
+}
+
+.button:hover {
+  background-color: #c6f6d5;
+  color: rgb(0, 0, 0);
+}
+
+/* Flexbox Styles */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.space-x-4 {
+  margin-right: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+/* Badge Styles */
+.bg-red-500 {
+  background-color: #f56565;
+}
+
+.bg-blue-500 {
+  background-color: #4299e1;
+}
+
+.bg-green-500 {
+  background-color: #48bb78;
+}
+
+.bg-orange-500 {
+  background-color: #ed8936;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.py-1 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.rounded {
+  border-radius: 9999px;
+}

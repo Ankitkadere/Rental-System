@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+}
+
+/* Header */
+.header {
+  background-color:rgba(145, 19, 156, 0.76);
+  color: white;
+  padding: 0px 0;
+}
+
+.header-content {
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;  
+}
+
+/* Navigation */
+.navbar {
+  background-color: rgb(145, 88, 88);
+  padding: 15px 0;
+  color: black;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-select,
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  color: #e64980;
+  font-size: 16px;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.user-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  background: linear-gradient(to right, #f783ac, #e64980);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.text-section {
+  max-width: 50%;
+}
+
+.text-section h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text-section p {
+  margin-top: 10px;
+}
+
+.shop-button {
+  background-color: #d63384;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.shop-button:hover {
+  background-color: #c2185b;
+}
+
+.main-image {
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* Recently Viewed */
+.recently-viewed {
+  background-color: #e64980;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 12px;
+ 
+  }
+  .header {
+    padding: 0px 0;
+  }
+
+  .header-content {
+    width: 98%;
+  }
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+  }
+}

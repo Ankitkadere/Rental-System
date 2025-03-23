@@ -1,0 +1,41 @@
+.slider-container {
+  width: 95%;
+  margin:1%  auto;
+  border: solid pink;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider-img {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carousel-caption h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  color: #ddd;
+  font-size: 16px;
+}
+@media screen and (max-width: 860px) {
+  .slider-container {
+    height: 200px;
+    border: solid pink;
+  }
+  .slider-img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
