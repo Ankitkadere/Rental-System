@@ -11,6 +11,7 @@ import { FaRegUser } from "react-icons/fa";
 function Navtop() {
   return (
     <>
+  
       {["xl"].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-2">
           <Container className="mobile" fluid>
@@ -28,7 +29,7 @@ function Navtop() {
                 </Button>
               </Form>
               <Navbar.Toggle aria-controls={`${expand}`}>
-              <FaRegUser size={23} color="rgba(145, 19, 156, 0.76)" />
+              <FaRegUser size={23}/>
               </Navbar.Toggle>
               
             </Navbar.Brand>

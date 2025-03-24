@@ -1,14 +1,16 @@
 .slider-container {
   width: 95%;
+  height: 350px;
   margin:1%  auto;
   border: solid pink;
   border-radius: 20px;
   overflow: hidden;
+  border:solld rgb(21, 64, 158);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .slider-img {
-  height: 450px;
+  height: 350px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -30,11 +32,11 @@
 }
 @media screen and (max-width: 860px) {
   .slider-container {
-    height: 200px;
+    height: 150px;
     border: solid pink;
   }
   .slider-img {
-    height: 200px;
+    height: 150px;
     object-fit: cover;
     border-radius: 10px;
   }

@@ -21,7 +21,7 @@
   border-radius: 10px;
   position: relative;
   flex: 1;
-  color: white;
+  color: rgb(21, 64, 158);
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -54,11 +54,12 @@
   bottom: 10px;
   left: 10px;
   display: grid;
-  grid-template-columns: repeat(3, 5px);
+  grid-template-columns: repeat(2, 10px);
   gap: 3px;
 }
 
 .dot {
+  display:none;
   width: 5px;
   height: 5px;
   background-color: white;
@@ -74,7 +75,7 @@
   position: absolute;
   bottom: 2px;
   right: 10px;
-  background: rgba(145, 19, 156, 0.76);
+  background: rgb(21, 64, 158);
   color: white;
   color: black;
   background: ;
@@ -90,7 +91,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background:rgba(145, 19, 156, 0.76);
+  background: rgb(21, 64, 158);
   color: white;
   color: white;
   padding: 8px;

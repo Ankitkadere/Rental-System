@@ -1,98 +1,86 @@
 /* General Styles */
-/* Container Styles */
+*{
+  margin:0px;
+  padding:0px;
+}
+a {
+  text-decoration: none;
+  color: inherit; /* Ensures the link takes the parent text color */
+}
 
+a:hover {
+  color: rgb(23, 74, 167); /* Optional: Change color on hover */
+}/* Product Grid */
+.gridbox {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+/* Main Container */
 .popularproducts {
   width: 100%;
-  margin: 0;
-  padding: 6px;
-  display: flex;
-  justify-content: Space-between;
-}
-
-/* Header Styles */
-.popularproducts h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 16px;
-  color: #2d3748;
-}
-
-/* Flexbox for Navigation Links */
-.popularproducts .flex {
-  display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  gap: 1px; /* Adds spacing between items */
-  margin-bottom: 0px;
-}
-
-/* Optional: You can add a line height to the links to make them more readable */
-.popularproducts a {
-  line-height: 3;
-}
-
-/* Container Styles */
-
-.gridbox {
-  margin: auto;
-  padding: 2%;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-/* Header Styles */
-.gridbox h1,
-h5 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0px;
-  color: #2d3748;
-  text-align: justify;
-}
-
-/* Navigation Links Styles */
-.gridbox a {
-  color: #4a5568;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.gridbox a:hover {
-  color: #2f855a;
-}
-
-/* Product Cards Grid */
-.gridbox .grid {
+  padding: 0px 2%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  width: 100%;
-  border-radius: 10px;
-  margin: 0px;
+  grid-template-columns: repeat(2, 4fr); /* Show 4 cards in one row */
+  gap: 15px; /* Adjust spacing */
+  justify-content: center;
 }
 
-/* Individual Product Card Styles */
-.gridbox .card {
-  width: 100%;
+/* Individual Product Card */
+.card {
   background-color: #ffffff;
-  padding: 4px 5px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+   width: 100%; /* Make cards responsive */
 }
 
-.gridbox .card img {
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  margin-bottom: 16px;
+  border-radius: 6px;
 }
 
-.gridbox .card .badge {
+/* Mobile Responsive: 1 Row with 2 Cards */
+@media (min-width: 768px) {
+  .popularproducts {
+    grid-template-columns: repeat(2, 2fr); /* Show 2 cards per row */
+  }
+}
+
+@media (min-width: 400px) {
+  .popularproducts {
+    grid-template-columns: repeat(2, 1fr); /* Show 1 card per row */
+  }
+}
+
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Product Image */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Badge Styles */
+.card .badge {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 10px;
+  left: 10px;
   padding: 4px 8px;
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -100,88 +88,68 @@ h5 {
   color: white;
 }
 
-.gridbox .card .badge-hot {
-  background-color: #f56565;
+.card .badge-hot {
+  background-color: rgb(15, 51, 117);
 }
 
-.gridbox .card .badge-sale {
-  background-color: #4299e1;
+/* Rating Stars */
+.text-yellow-500 {
+  color: gold;
 }
 
-.card .badge-new {
-  background-color: rgba(145, 19, 156, 0.76);
-  color: white;
+.text-gray-300 {
+  color: lightgray;
 }
 
-.card .badge-discount {
-  background-color: rgba(145, 19, 156, 0.76);
-  color: white;
-}
-
-/* Text Styles */
-.text-sm {
-  font-size: 0.875rem;
-}
-
+/* Price Styles */
 .text-lg {
   font-size: 1rem;
-  text-align: left;
+  font-weight: bold;
+  color: rgb(21, 64, 158);
+}
+
+.text-sm {
+  font-size: 0.875rem;
 }
 
 .text-gray-500 {
   color: #6b7280;
 }
 
-.text-gray-600 {
-  color: #4b5563;
-}
-
-.text-yellow-500 {
-  color: rgba(145, 19, 156, 0.76);
-  margin: 0px;
-}
-
 .text-green-600 {
-  color: rgba(145, 19, 156, 0.76);
-}
-
-.text-gray-300 {
-  background-color: rgba(145, 19, 156, 0.76);
-  color: white;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
-.font-bold {
-  font-weight: 700;
+  color: rgb(21, 64, 158);
 }
 
 .line-through {
-  margin-left: 4px;
-  margin-top: 1.6px;
+  margin-left: 5px;
   text-decoration: line-through;
+  color: red;
+}
+
+/* Product Details */
+.additional {
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
 /* Button Styles */
 .button {
-  padding: 2px 30px;
+  padding: 1px 20px;
   border-radius: 10px;
   border: none;
+  font-size:14px;
   cursor: pointer;
   font-weight: 700;
-  background-color: #f0fdf4;
-  background-color: rgba(145, 19, 156, 0.76);
+  background-color: rgb(21, 64, 158);
   color: white;
+  transition: 0.3s ease-in-out;
 }
 
 .button:hover {
-  background-color: #c6f6d5;
-  color: rgb(0, 0, 0);
+  background-color: rgb(27, 40, 154);
 }
 
-/* Flexbox Styles */
+/* Flexbox Utilities */
 .flex {
   display: flex;
 }
@@ -194,57 +162,70 @@ h5 {
   justify-content: space-between;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
-.space-x-4 {
-  margin-right: 16px;
-}
-
 .ml-2 {
   margin-left: 8px;
 }
 
-/* Badge Styles */
-.bg-red-500 {
-  background-color: #f56565;
-}
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-.bg-blue-500 {
-  background-color: #4299e1;
-}
+  /* Product Grid */
+ 
 
-.bg-green-500 {
-  background-color: #48bb78;
-}
+  /* Product List */
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+  }
 
-.bg-orange-500 {
-  background-color: #ed8936;
-}
+  /* Individual Product Card */
+  .card {
+    padding: 8px;
+    border-radius: 6px;
+    text-align: left;
+  }
+  .card:hover {
+    transform: scale(1);
+  }
 
-.text-white {
-  color: white;
-}
+  .card img {
+    height: 150px;
+    border-radius: 4px;
+  }
 
-.text-xs {
-  font-size: 0.75rem;
-}
+  /* Badge Styles */
+  .card .badge {
+    top: 8px;
+    left: 8px;
+    padding: 3px 6px;
+    font-size: 0.65rem;
+  }
 
-.font-bold {
-  font-weight: 700;
-}
+  /* Rating Stars */
+  .text-lg {
+    font-size: 0.875rem;
+  }
 
-.px-2 {
-  padding-left: 8px;
-  padding-right: 8px;
-}
+  .text-sm {
+    font-size: 0.55rem;
+  }
+  .oldpeice{
+    padding-top:6px;
+  }
 
-.py-1 {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
+  /* Button Styles */
+  .button {
+    padding: 0px 10px;
+    font-size: 0.775rem;
+  }
 
-.rounded {
-  border-radius: 9999px;
+  /* Flexbox Utilities */
+  .ml-2 {
+    margin-left: 5px;
+  }
 }

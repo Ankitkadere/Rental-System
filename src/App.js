@@ -9,6 +9,8 @@ import Home from "./Pages/Home/Home";
 import Footer from "./Component/Footer/Footer";
 import ProductDetailsPage from '../src/Pages/Fullproductdetails/Productfullpage';
 import ProductBuy from "./Pages/Buy/Buyproduct";
+import Admin from "./Admin";
+import Login from "./Login/Login";
 function App() {
   return (
     <>
@@ -20,6 +22,8 @@ function App() {
           <Route exact={true} path="/Home" element={<Home />} />
           <Route exact={true} path="/ProductDetailsPage" element={<ProductDetailsPage />} />
           <Route exact={true} path="/ProductBuy" element={<ProductBuy/>} />
+          <Route exact={true} path="/Admin" element={<Admin/>} />
+          <Route exact={true} path="/Login" element={<Login/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
