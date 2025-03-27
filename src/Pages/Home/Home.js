@@ -1,25 +1,28 @@
 import React from "react";
 import "../Home/Home.css";
 import UncontrolledExample from "../../Component/Slider/Slide";
-import PopularProducts from "../Productlist/productlist";
 import Smallbanner from "../../Component/Smallanner/Sbanner";
 import Categories from "../../Component/Categery/Categery";
+import Roomlist from "../Productlist/Roomlist";
+import RoomSearch from "../../Component/Search Page/Main Room Find/Roomfind";
 
 const Home = () => {
   return (
     <>
       {/*Slider */}
       <UncontrolledExample />
+       {/*Room Search */}
+      
       {/*Productlist*/}
-      <PopularProducts />
+      <Roomlist />
       {/*Smal  Banner*/}
       <Smallbanner />
       {/*Productlist*/}
-      <PopularProducts />
+      <Roomlist />
       {/*Categery*/}
-      <Categories/>
-        {/*Productlist*/}
-        <PopularProducts />
+      <Categories />
+      {/*Productlist*/}
+      <Roomlist />
     </>
   );
 };

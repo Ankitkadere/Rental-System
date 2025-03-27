@@ -20,7 +20,8 @@ body {
   width: 100%;
   z-index: 100;
   padding: 5px 2%;
-  color: white;
+  -background-color: rgb(21, 64, 158);
+  outline: none;
   border-bottom: 1px solid #dee2e6;
 }
 
@@ -29,7 +30,7 @@ body {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: rgb(33, 67, 180);
 }
 
 /* Navbar Toggler */
@@ -50,17 +51,18 @@ body {
 }
 
 .offcanvas-header {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid rgb(21, 64, 158);
 }
 
 .offcanvas-title {
   font-size: 1.2rem;
   font-weight: bold;
+  color:rgb(21, 64, 158);
 }
 
 /* Navbar Links */
 .nav-link {
-  color: #333 !important;
+  color:rgb(21, 64, 158);
   font-size: 1rem;
   transition: color 0.3s ease-in-out;
   margin: 0 3%;
@@ -116,7 +118,7 @@ body {
   .search {
     border: none;
     position: absolute;
-    margin-left: 58%;
+    margin-left: -10%;
   }
 
   .btn-outline-success:hover {
@@ -135,7 +137,7 @@ body {
     width: 100%;
     border-radius: 50px;
     border: 1px solid rgb(21, 64, 158);
-    padding: 0px 25px;
+    padding: 2px 25px;
   }
   .navbar-toggler {
     border: none;

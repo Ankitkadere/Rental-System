@@ -1,0 +1,102 @@
+ 
+  .Finder {
+    
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .Finder .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .Finder .search-box {
+    padding: 20px;
+  }
+  
+  .Finder .input-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .Finder label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .Finder .input, .select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .Finder .suggestions {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 2px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  .Finder .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .Finder .suggestion-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .Finder .select-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .Finder .select-group div {
+    flex: 1;
+  }
+  
+  .Finder .search-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .Finder .search-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .Finder .container {
+      width: 100%;
+      padding: 1px;
+    }
+  
+    .Finder .select-group {
+      flex-direction: column;
+    }
+  
+    .Finder .search-button {
+      font-size: 14px;
+    }
+  }

@@ -2,7 +2,6 @@
   width: 95%;
   height: 350px;
   margin:1%  auto;
-  border: solid pink;
   border-radius: 20px;
   overflow: hidden;
   border:solld rgb(21, 64, 158);
@@ -22,7 +21,7 @@
 
 .carousel-caption h3 {
   color: #fff;
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
 }
 
@@ -33,7 +32,7 @@
 @media screen and (max-width: 860px) {
   .slider-container {
     height: 150px;
-    border: solid pink;
+    
   }
   .slider-img {
     height: 150px;

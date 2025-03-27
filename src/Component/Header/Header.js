@@ -1,7 +1,7 @@
 import React from "react";
 import "../Header/Header.css";
-import { FaFacebookF, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaBars, FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
-
+import { FaFacebookF, FaTwitter, FaInstagramSquare , FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+ 
 const Header = () => {
   return (
     <>
@@ -9,11 +9,11 @@ const Header = () => {
       <header className="header">
         <div className="container header-content">
           <div className="contact-info">
-            <FaPhoneAlt /> <span>+91 9932105832</span>
-            <FaEnvelope className="ml-12" /> <span>info@giftyonline.com</span>
+            <FaPhoneAlt className="sicon" /> <span>+91 9174750864</span>
+            <FaEnvelope className="ml-12 sicon" /> <span>info@roomonline.com</span>
           </div>
           <div className="social-icons">
-            <FaFacebookF /> <FaTwitter /> <FaInstagram />
+            <FaFacebookF className="sicon"/> <FaTwitter className="sicon"/> <FaInstagramSquare className="sicon"/>
           </div>
         </div>
       </header>

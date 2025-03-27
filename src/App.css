@@ -5,9 +5,13 @@ body::-webkit-scrollbar {
   display:none;
 }
 
+*{
+  sroll-type-decoration:none;
+}
 /* Hide scrollbar for Firefox */
 body {
- 
+  sroll-type-decoration:none;
+  overflow-x:hidden;
   scrollbar-width: none;
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }

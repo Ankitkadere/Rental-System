@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: rgba(145, 19, 156, 0.76);
+  background-color: rgb(12, 49, 128);
   color: white;
   font-family: Arial, sans-serif;
   padding: 3%;
@@ -45,7 +45,7 @@
 }
 
 .newsletter button {
-  background: rgba(145, 19, 156, 0.76);
+  background: rgb(26, 71, 155);
   padding: 10px;
   border: white solid 0.1px;
   margin: 0px 2px;
@@ -146,7 +146,7 @@
 
 .fcopyright {
   text-align: center;
-  padding-top:1%;
+  padding-top: 1%;
   align-items: center;
 }
 
@@ -160,13 +160,7 @@
     grid-template-columns: 1fr;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
+  .newsletter {
     text-align: center;
-  }
-  .footer-bottom {
-    display: flex;
-    flex-direction: row;
   }
 }

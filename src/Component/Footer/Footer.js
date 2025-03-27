@@ -20,7 +20,7 @@ const Footer = () => {
               <button>Subscribe</button>
             </div>
           </div>
-
+          <hr></hr>
           {/* Footer Sections */}
           <footer className="footer">
             <div className="footer-grid">

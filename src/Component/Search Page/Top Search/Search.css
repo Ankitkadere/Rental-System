@@ -1,0 +1,155 @@
+.search-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 999999;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.search-title {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 2%;
+  color: white;
+  background: rgb(21, 64, 158);
+}
+
+.search-box {
+  margin-top: 10%;
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  padding-left: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  border-color: rgb(8, 57, 109);
+  box-shadow: 0 0 8px rgba(8, 57, 109, 0.5);
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.search-input:focus {
+  border-color: rgb(8, 57, 109);
+  box-shadow: 0 0 8px rgba(8, 57, 109, 0.5);
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(14, 49, 124);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.suggestions-list {
+  position: absolute;
+  width: 100%;
+  color: rgb(10, 42, 110);
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: left;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.suggestion-item:hover {
+  background: #f3f4f6;
+}
+
+.suggestion-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: rgb(10, 62, 117);
+}
+/* Responsive Design for Small Screens */
+@media (max-width: 480px) {
+  .search-container {
+   overflow:hidden;
+   
+  }
+
+  .search-box {
+    margin-top: 10.4%;
+    position: fixed;  /* Fixed layout shifting */
+    width: 90%;
+  }
+
+  .search-title {
+    font-size: 18px;
+    padding: 5% 0px 12% 0px; /* Adjusted padding */
+    text-align: center;
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .search-icon {
+    font-size: 16px;
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .search-container {
+    padding: 20px 20%;
+  }
+
+  .search-title {
+    font-size: 22px;
+    padding: 1%;
+  }
+
+  .search-box {
+    margin-top: 10%;
+  }
+
+  .search-input {
+    font-size: 18px;
+  }
+
+  .search-icon {
+    font-size: 20px;
+  }
+}

@@ -1,93 +1,185 @@
-/* Global Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f3f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
-  /* Authentication Container */
-  .auth-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-  }
-  
-  /* Authentication Box */
+/* Body Styling */
+.auth-wrapper {
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f3f4f6;
+  margin: -2% 0;
+  padding: 20px;
+  width:100vw;
+}
+
+/* Form Box */
+.auth-box {
+  margin: 5% auto;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+  width: 40%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.auth-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Heading */
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.auth-form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Input Fields */
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s ease-in-out;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color:rgb(21, 15, 138);
+  box-shadow: 0 0 4px rgb(21, 15, 134);
+}
+
+/* Remember Me & Forgot Password */
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  width: 16px;
+  height: 16px;
+}
+
+/* Button */
+.auth-button {
+  width: 100%;
+  background-color: rgb(13, 50, 129);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.auth-button:hover {
+  background-color: rgb(7, 30, 82);
+}
+
+/* Toggle Text */
+.auth-toggle {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Links */
+.auth-link {
+  color: rgb(15, 56, 145);
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 5px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.auth-link:hover {
+  color: rgb(8, 44, 122);
+}
+.favorites-dropdown {
+  width: 100%;
+  padding: 12px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Styling when dropdown is focused */
+.favorites-dropdown:focus {
+  border-color:rgb(21, 34, 151);
+  box-shadow: 0 0 5px rgba(9, 27, 129, 0.99);
+}
+
+/* Multi-select appearance */
+.favorites-dropdown option {
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* Optional: Make multi-select dropdown taller */
+.favorites-dropdown[multiple] {
+  height: 120px;
+  overflow-y: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .auth-box {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+      width: 50%;
+      padding: 40px;
   }
-  
-  /* Title */
+}
+
+@media (max-width: 768px) {
+  .auth-box {
+      width: 80%;
+      padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-box {
+      width: 100%;
+      padding: 10px;
+  }
   .auth-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
+      font-size: 1.2rem;
   }
-  
-  /* Form Group */
-  .form-group {
-    text-align: left;
-    margin-bottom: 12px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  /* Button */
   .auth-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4f46e5;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.3s;
+      font-size: 0.9rem;
+      padding: 8px;
   }
-  
-  .auth-button:hover {
-    background-color: #4338ca;
+  .auth-form input {
+      font-size: 0.9rem;
+      padding: 8px;
   }
-  
-  /* Toggle Text */
-  .auth-toggle-text {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .toggle-button {
-    background: none;
-    border: none;
-    color: #4f46e5;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .toggle-button:hover {
-    text-decoration: underline;
-  }
-  
+}

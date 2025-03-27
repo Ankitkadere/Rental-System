@@ -5,7 +5,7 @@ const Adminroom = () => {
   return (
     <div>
       <h1>User Booked Rooms</h1>
-      <Adminroomlist userID="32324" /> {/* Change userID dynamically */}
+      <Adminroomlist userID="Owner" /> {/* Change userID dynamically */}
     </div>
   );
 };

@@ -1,13 +1,13 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom"; // Import useLocation
 import "../Fullproductdetails/Fullpage.css";
-
+import Unablepage from '../../Component/Pagenotfound/Notfound';
 const ProductDetailsPage = () => {
   const location = useLocation(); 
   const product = location.state?.product; // Get product data from navigation
 
   if (!product) {
-    return <h2 className="text-center">No Product Data Available</h2>;
+    return <Unablepage/>;
   }
 
   return (

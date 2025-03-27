@@ -5,7 +5,7 @@ import { FaClock } from "react-icons/fa";
 const Smallbanner = () => {
   return (
     <>
-    <div className="container">
+    <div className="containerbanner">
       <div className="sale-section">
         {/* Custom T-Shirt Section */}
         <div className="sale-box">

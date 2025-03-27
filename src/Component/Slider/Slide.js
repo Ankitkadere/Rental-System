@@ -8,7 +8,7 @@ const ImageSlider = () => {
       <Carousel.Item>
         <img
           className="d-block w-100 slider-img"
-          src="https://static.vecteezy.com/system/resources/thumbnails/057/202/359/small/delicious-raspberry-cream-cake-garnished-with-fresh-berries-and-delicate-decorations-on-a-soft-pink-background-photo.jpeg"
+          src="https://media.istockphoto.com/id/828457564/photo/blue-living-room.jpg?s=612x612&w=0&k=20&c=6l3QAEYyjPBPUpqrK5dFV3M94V7lJyM40DHpeWGA_eM="
           alt="First slide"
         />
         <Carousel.Caption>
@@ -19,7 +19,7 @@ const ImageSlider = () => {
       <Carousel.Item>
         <img
           className="d-block w-100 slider-img"
-          src="https://img.freepik.com/premium-psd/delicious-cake-social-media-promotion-instagram-banner-template_545154-98.jpg?semt=ais_hybrid"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTwkGkQK3CD0bCgL9EZkvoQrl9YwUTiOhhuA&s"
           alt="Second slide"
         />
         <Carousel.Caption>
@@ -30,7 +30,7 @@ const ImageSlider = () => {
       <Carousel.Item>
         <img
           className="d-block w-100 slider-img"
-          src= "https://www.shutterstock.com/image-photo/birthday-cake-candlescover-banner-conceptdifferent-600nw-2212456441.jpg"
+          src= "https://png.pngtree.com/background/20250104/original/pngtree-blue-interior-living-room-with-luxury-furniture-picture-image_15440746.jpg"
           alt="Third slide"
         />
         <Carousel.Caption>

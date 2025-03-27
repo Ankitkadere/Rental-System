@@ -4,7 +4,7 @@ import Data from "../../Database/Data.json";
 import { BsCartCheck } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-const PopularProducts = () => {
+const Roomlist = () => {
   const navigate = useNavigate();
 
   const handleProductClick = (product) => {
@@ -18,9 +18,7 @@ const PopularProducts = () => {
           <div key={userID}>
             <h2 className="d-none">{userID}</h2>
             <div className="product-list">
-              {Data[userID]
-                .filter((product) => parseFloat(product.id) === 9174750864)
-                .map((product, index) => (
+              {Data[userID].map((product, index) => (
                   <div className="card" key={index}>
                     <span className="badge badge-hot">Rent</span>
                     <img
@@ -66,5 +64,5 @@ const PopularProducts = () => {
     </div>
   );
 };
-
-export default PopularProducts;
+ 
+export default Roomlist;
