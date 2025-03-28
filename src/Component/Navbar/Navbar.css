@@ -92,7 +92,11 @@ body {
   border: 1px solid rgb(21, 64, 158);
   padding: 8px 12px;
 }
-
+.form-control:focus, .form-control:hover{
+  outline: none !important;
+  box-shadow: none !important;
+   
+}
 /* Search Button */
 .btn-outline-success {
   border-radius: 15px;

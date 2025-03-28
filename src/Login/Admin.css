@@ -140,7 +140,7 @@ body {
 /* Responsive styles */
 @media (max-width: 768px) {
   .sidebar-hidden {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
 
   .sidebar {

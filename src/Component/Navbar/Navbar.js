@@ -22,7 +22,7 @@ function Navtop() {
                   <Form.Control
                     type="search"
                     placeholder="Search"
-                    className="me-0"
+                    className="me-0 "
                     aria-label="Search"
                   />
                   <Link to="/Search">

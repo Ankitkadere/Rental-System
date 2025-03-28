@@ -46,7 +46,7 @@ const Login = () => {
     localStorage.removeItem("password");
     setMobile("");
     setPassword("");
-    alert("Saved data cleared!");
+    
   };
 
   const handleSubmit = (event) => {
