@@ -12,8 +12,8 @@ const ImageSlider = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First Slide</h3>
-          <p>Beautiful cakes for every occasion.</p>
+          <h3 className="d-none">First Slide</h3>
+          <p className="d-none">Beautiful cakes for every occasion.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -23,8 +23,8 @@ const ImageSlider = () => {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3>Second Slide</h3>
-          <p>Freshly baked with love and care.</p>
+          <h3 className="d-none">Second Slide</h3>
+          <p className="d-none">Freshly baked with love and care.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -34,8 +34,8 @@ const ImageSlider = () => {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3>Third Slide</h3>
-          <p>Order your dream cake today.</p>
+          <h3 className="d-none">Third Slide</h3>
+          <p className="d-none">Order your dream cake today.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
