@@ -14,6 +14,10 @@ import { FaUsers } from "react-icons/fa6";
 import { PiCurrencyInrFill } from "react-icons/pi";
 import { IoSettings } from "react-icons/io5";
 import NotFound from "../Component/Pagenotfound/Notfound";
+import "../Login/Admin.css";
+import { GrServices } from "react-icons/gr";
+import Bigproducts from "../Admin/Big Product/Bigproduct";
+import { Link } from "react-router-dom"; // Import useLocation
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -47,8 +51,6 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    
 
     if (document.getElementById("remember_me").checked) {
       localStorage.setItem("mobile", mobile);
@@ -84,8 +86,6 @@ const Login = () => {
 
   const [activePage, setActivePage] = useState("dashboard");
   const [sidebarHidden, setSidebarHidden] = useState(false);
-  const [user, setUser] = useState(null);
-  const location = useLocation();
 
   const handleClearLocal = () => {
     localStorage.removeItem("mobile");
@@ -102,158 +102,226 @@ const Login = () => {
   };
 
   const renderContent = () => {
-    switch (activePage) {
-      case "dashboard":
-        return (
+    return (
+      <div className="content-wrapper">
+        <div className="header">
+          <div>
+            <button className="menu-toggle flex " onClick={toggleSidebar}>
+              <FaBars className="tgicon" />{" "}
+              <h1 className="page-title">{activePage}</h1>
+            </button>
+          </div>
+          <div className="user-info">
+            <img
+              className="user-avatar"
+              src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg"
+              alt="User"
+            />
+            <br></br>
+          </div>
+        </div>
+        <hr />
+
+        {Object.keys(Data).map((userID) => (
+          <div key={userID}>
+            <h2 className="d-none">{userID}</h2>
+            {Data[userID]
+              .filter(
+                (User) =>
+                  parseFloat(User.Number) === parseInt(mobile) &&
+                  User.Password === password
+              )
+              .map((User, index) => (
+                <div key={index}>
+                  <>
+                    {activePage === "Owner" && (
+                      <div className="dashboard-grid">
+                        {[
+                          {
+                            title: User.FullName,
+                            value: "Owner/Manager",
+                            change: "Full Name",
+                            className: "sales",
+                          },
+                          {
+                            title: User.Number,
+                            value: "Mobile Number",
+                            change: "Registered Mobile Number",
+                            className: "orders",
+                          },
+                          {
+                            title: User.Password,
+                            value: "Password",
+                            change: "Verified Password",
+                            className: "visitors",
+                          },
+                        ].map((stat, index) => (
+                          <div
+                            key={index}
+                            className={`stat-card ${stat.className}`}
+                          >
+                            <h2>{stat.title}</h2>
+                            <p className="stat-value">{stat.value}</p>
+                            <p className="stat-change">{stat.change}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                </div>
+              ))}
+          </div>
+        ))}
+
+        {activePage === "dashboard" && (
+          <div className="dashboard-grid">
+            <PopularProducts
+            />
+          </div>
+        )}
+        {activePage === "ProductDetails" && (
           <>
-            <div className="flex justify-between items-center mb-6 adminhead  setall">
-              <div className="flex items-center">
-                <button
-                  className="mr-4 p-2 bg-gray-200 rounded-md"
-                  onClick={toggleSidebar}
-                ></button>
-                <h1 className="text-2xl font-bold text-gray-700">Dashboard</h1>
-              </div>
-              <div className="flex items-center ">
-                <input
-                  className="border rounded-md p-2 mr-4 d-none"
-                  placeholder="Search projects"
-                  type="text"
-                />
-                <img
-                  alt="User profile"
-                  className="rounded-full"
-                  height="40"
-                  src="https://placehold.co/40x40"
-                  width="40"
-                />
-              </div>
-            </div>
-            <hr></hr>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div className="bg-gradient-to-r from-pink-500 to-orange-500 text-white p-6 rounded-lg shadow-md">
-                <h2 className="text-lg font-medium">Weekly Sales</h2>
-                <p className="text-2xl font-bold">$ 15,0000</p>
-                <p className="text-sm">Increased by 60%</p>
-              </div>
-              <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-6 rounded-lg shadow-md">
-                <h2 className="text-lg font-medium">Weekly Orders</h2>
-                <p className="text-2xl font-bold">45,6334</p>
-                <p className="text-sm">Decreased by 10%</p>
-              </div>
-              <div className="bg-gradient-to-r from-green-500 to-teal-500 text-white p-6 rounded-lg shadow-md">
-                <h2 className="text-lg font-medium">Visitors Online</h2>
-                <p className="text-2xl font-bold">95,5741</p>
-                <p className="text-sm">Increased by 5%</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div>
-                <PopularProducts />
-              </div>
+            if (!product) {<Unablepage />}
+            <div className="dashboard-grid">
+              <>
+                <div className="product-details">
+                  <div className="product-images">
+                    <img src={product.image} alt={product.title} />
+                  </div>
+                  <div className="product-info">
+                    <h1>{product.title}</h1>
+                    <p>{product.description}</p>
+                    <div className="flex">
+                      <p className="price mr-5">Rs {product.price} / Month</p>
+                      <p className="availability">: {product.availability}</p>
+                    </div>
+                    <div className="specifications">
+                      <ul>
+                        <li>Wifi: {product.Wifi}</li>
+                        <li>Kitchen: {product.Kitchen}</li>
+                        <li>Toilet: {product.Toilet}</li>
+                        <li>E-Bill: {product.Bill}</li>
+                      </ul>
+                    </div>
+
+                    <div className="product-variants">
+                      <h3>Address</h3>
+                      <ul>
+                        {product.variants?.map((variant, index) => (
+                          <li key={index}>{variant}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="cta-buttons">
+                      <Link to="/ProductBuy" className="buybutton">
+                        Book Now
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="product-info">
+                  <div className="product-details productpolicy">
+                    <div className="shipping-info">
+                      <h3>Information</h3>
+                      <p>{product.information}</p>
+                    </div>
+
+                    <div className="return-policy">
+                      <h3>Refund Policy</h3>
+                      <p>{product.returnPolicy}</p>
+                    </div>
+
+                    <div className="warranty">
+                      <h3>Product Warranty</h3>
+                      <p>{product.warranty}</p>
+                    </div>
+
+                    <div className="payment-options">
+                      <h3>Payment Options</h3>
+                      <p> {product.paymentOptions}</p>
+                    </div>
+                  </div>
+                  <div className="related-products">
+                    <h3>Related Products</h3>
+                    <ul>
+                      {product.relatedProducts?.map((related, index) => (
+                        <li key={index}>
+                          {related.name} - ${related.price}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </>
             </div>
           </>
-        );
-      case "Anylatics":
-        return (
-          <>
-            <div className="flex justify-between items-center mb-6 setall">
-              <div className="flex items-center">
-                <button
-                  className="mr-4 p-2 bg-gray-200 rounded-md"
-                  onClick={toggleSidebar}
-                ></button>
-                <h1 className="text-2xl font-bold text-gray-700">Anylatics</h1>
+        )}
+        {activePage === "Anylatics" && (
+          <div className="dashboard-grid">
+            {[
+              {
+                title: "Weekly Sales",
+                value: "$150,000",
+                change: "Increased by 60%",
+                className: "sales",
+              },
+              {
+                title: "Weekly Orders",
+                value: "45,633",
+                change: "Decreased by 10%",
+                className: "orders",
+              },
+              {
+                title: "Visitors Online",
+                value: "95,574",
+                change: "Increased by 5%",
+                className: "visitors",
+              },
+            ].map((stat, index) => (
+              <div key={index} className={`stat-card ${stat.className}`}>
+                <h2>{stat.title}</h2>
+                <p className="stat-value">{stat.value}</p>
+                <p className="stat-change">{stat.change}</p>
               </div>
-              <div className="flex items-center">
-                <input
-                  className="border rounded-md p-2 mr-4 d-none"
-                  placeholder="Search projects"
-                  type="text"
-                />
-                <img
-                  alt="User profile"
-                  className="rounded-full"
-                  height="40"
-                  src="https://placehold.co/40x40"
-                  width="40"
-                />
-              </div>
-            </div>
-            <hr></hr>
-            <h1 className="text-2xl font-bold text-gray-700 mb-6">
-              Basic UI Elements
-            </h1>
-            <p className="text-gray-700">Content for Basic UI Elements page.</p>
-          </>
-        );
-      case "Complaint":
-        return (
-          <>
-            <div className="flex justify-between items-center mb-6 setall">
-              <div className="flex items-center">
-                <button
-                  className="mr-4 p-2 bg-gray-200 rounded-md"
-                  onClick={toggleSidebar}
-                ></button>
-                <h1 className="text-2xl font-bold text-gray-700">Complaint</h1>
-              </div>
-              <div className="flex items-center">
-                <input
-                  className="border rounded-md p-2 mr-4 d-none"
-                  placeholder="Search projects"
-                  type="text"
-                />
-                <img
-                  alt="User profile"
-                  className="rounded-full"
-                  height="40"
-                  src="https://placehold.co/40x40"
-                  width="40"
-                />
-              </div>
-            </div>
-            <hr></hr>
-            <h1 className="text-2xl font-bold text-gray-700 mb-6">Icons</h1>
-            <p className="text-gray-700">Content for Icons page.</p>
-          </>
-        );
-      case "Service":
-        return (
-          <>
-            {" "}
-            <div className="flex justify-between items-center mb-6 fix setall" >
-              <div className="flex items-center">
-                <button
-                  className="mr-4 p-2 bg-gray-200 rounded-md"
-                  onClick={toggleSidebar}
-                ></button>
-                <h1 className="text-2xl font-bold text-gray-700">Services</h1>
-              </div>
-              <div className="flex items-center">
-                <input
-                  className="border rounded-md p-2 mr-4 d-none"
-                  placeholder="Search projects"
-                  type="text"
-                />
-                <img
-                  alt="User profile"
-                  className="rounded-full"
-                  height="40"
-                  src="https://placehold.co/40x40"
-                  width="40"
-                />
-              </div>
-            </div>
-            <hr></hr>
-            <h1 className="text-2xl font-bold text-gray-700 mb-6">Forms</h1>
-            <p className="text-gray-700">Content for Forms page.</p>
-          </>
-        );
-      default:
-        return <NotFound />;
-    }
+            ))}
+          </div>
+        )}
+        {activePage === "Chart" && (
+          <div className="page-content">
+            <h2>Analytics Overview</h2>
+            <p>
+              Gain insights into your data with real-time statistics and trends.
+            </p>
+          </div>
+        )}
+        {activePage === "Complaint" && (
+          <div className="page-content">
+            <h2>Complaint Management</h2>
+            <p>Efficiently track and resolve customer complaints with ease.</p>
+          </div>
+        )}
+        {activePage === "Service" && (
+          <div className="page-content">
+            <h2>Our Services</h2>
+            <p>Explore and manage the services offered by our platform.</p>
+          </div>
+        )}
+        {![
+          "Owner",
+          "dashboard",
+          "Anylatics",
+          "Chart",
+          "Complaint",
+          "Service",
+          
+        ].includes(activePage) && <NotFound />}
+      </div>
+    );
   };
+
+  const location = useLocation();
+  const product = location.state?.product; // Get product data from navigation
 
   return (
     <>
@@ -279,12 +347,18 @@ const Login = () => {
                         id="sidebar"
                       >
                         <div className="p-4 flex items-center">
-                          <span className="ml-2 text-xl font-bold text-purple-500">
+                          <span className="ml-2 text-xl font-bold text-blue-800">
                             My Rom
                           </span>
                         </div>
                         <hr></hr>
-                        <div className="p-4 pt-1 flex items-center">
+                        <div
+                          className=" flex items-center"
+                          onClick={() => {
+                            loadPage("Owner");
+                            toggleSidebar();
+                          }}
+                        >
                           <img
                             alt="User profile"
                             className="rounded-full"
@@ -292,11 +366,10 @@ const Login = () => {
                             src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
                             width="50"
                           />
-                          <div className="ml-2 nameheader">
-                            <p className="text-gray-900 font-medium ownername">
+                          <div className="nameheader">
+                            <p className="text-blue-900 mt-3 ownername">
                               {User.FullName}
                             </p>
-                            <p className="text-gray-500 text-sm">owner</p>
                           </div>
                         </div>
                         <nav className="mt-4">
@@ -329,7 +402,22 @@ const Login = () => {
                                 className="text-purple-500"
                                 icon={<FaUsers />}
                               />
-                              <span className="ml-2">Basic UI Elements</span>
+                              <span className="ml-2">Anylatics</span>
+                            </li>
+                            <li
+                              className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
+                                activePage === "Anylatics" ? "active" : ""
+                              }`}
+                              onClick={() => {
+                                loadPage("Chart");
+                                toggleSidebar();
+                              }}
+                            >
+                              <FaUsers
+                                className="text-purple-500"
+                                icon={<FaUsers />}
+                              />
+                              <span className="ml-2">Chart</span>
                             </li>
                             <li
                               className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
@@ -355,13 +443,17 @@ const Login = () => {
                                 toggleSidebar();
                               }}
                             >
-                              <span className="ml-2">Forms</span>
+                              <GrServices
+                                className="text-purple-500"
+                                icon={<GrServices />}
+                              />
+                              <span className="ml-2">Service</span>
                             </li>
                           </ul>
                         </nav>
                         <div className="p-4">
                           <button
-                            className="w-full bg-purple-500 text-white py-2 rounded-md"
+                            className="auth-button bot"
                             onClick={toggleSidebar}
                           >
                             + ADD ROOM
@@ -372,7 +464,7 @@ const Login = () => {
                               <br></br>
                               <button
                                 type="button"
-                                className="auth-button"
+                                className="auth-button botout"
                                 onClick={handleClearLocalStorage} // Removed ()
                               >
                                 Log Out !
@@ -398,7 +490,7 @@ const Login = () => {
         ))}
       </div>
 
-      <div className="auth-wrapper" >
+      <div className="auth-wrapper">
         <div className="auth-box">
           <h2 className="auth-title">
             {isForgotPassword
@@ -560,7 +652,7 @@ const Login = () => {
                 <div className="auth-options">
                   <div className="checkbox-group">
                     <input type="checkbox" id="remember_me" />
-                    <label htmlFor="remember_me">Remember me</label>
+                    <label htmlFor="remember_me"> Remember me</label>
                   </div>
                   <button
                     type="button"

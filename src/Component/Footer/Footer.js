@@ -110,10 +110,10 @@ const Footer = () => {
           <p>© 2025 Gifty. All Rights Reserved.</p>
         </div>
         <div className="footer-payments">
-          <img src="https://placehold.co/16x16" alt="Payment 1" />
-          <img src="https://placehold.co/16x16" alt="Payment 2" />
-          <img src="https://placehold.co/16x16" alt="Payment 3" />
-          <img src="https://placehold.co/16x16" alt="Payment 4" />
+          <img src="https://placehold.co/16x16" alt="" />
+          <img src="https://placehold.co/16x16" alt="" />
+          <img src="https://placehold.co/16x16" alt="" />
+          <img src="https://placehold.co/16x16" alt="" />
         </div>
       </div>
     </>

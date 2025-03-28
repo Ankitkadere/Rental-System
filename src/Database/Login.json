@@ -46,8 +46,8 @@
         },
         {
             "FullName": "Emma Brown",
-            "Number": "6677889900",
-            "Password": "emmaPass567",
+            "Number": "12345678",
+            "Password": "112233",
             "ConfirmPassword": "emmaPass567",
             "State": "Nevada",
             "Pincode": "89044",

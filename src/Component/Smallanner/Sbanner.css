@@ -1,46 +1,52 @@
 /* Container */
-.containerbanner{
+.containerbanner {
   width: 100%;
   margin: auto;
   padding: 10px;
+  display:none;
 }
 
-.sale-section {
+.containerbanner .sale-section {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.sale-box {
+.containerbanner .sale-box {
   width: 100%;
   background-image: url("https://www.shutterstock.com/image-photo/celebration-birthday-cake-colorful-sprinkles-600nw-2275503965.jpg");
-  background-size: cover;
+  background-image-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 50px;
   border-radius: 10px;
   position: relative;
   flex: 1;
+  height: 250px;
   color: rgb(21, 64, 158);
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Content Styles */
-.content {
+.containerbanner .content {
   position: relative;
   z-index: 2;
+  margin-left: -25px;
+  width: 60%;
+  height: 30px;
+  background: none;
 }
 
-.title {
-  font-size: 1.7rem;
+.containerbanner .title {
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 5px;
   margin-left: -10px;
   text-shadow: 1.5px 1.5px black;
 }
 
-.subtitle {
+.containerbanner .subtitle {
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 10px;
@@ -49,7 +55,7 @@
 }
 
 /* Dotted Pattern */
-.dotted-pattern {
+.containerbanner .dotted-pattern {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -58,8 +64,8 @@
   gap: 3px;
 }
 
-.dot {
-  display:none;
+.containerbanner .dot {
+  display: none;
   width: 5px;
   height: 5px;
   background-color: white;
@@ -69,7 +75,7 @@
 /* Image Section */
 
 /* Discount Badge */
-.discount-badge {
+.containerbanner .discount-badge {
   height: 60px;
   width: 60px;
   position: absolute;
@@ -87,7 +93,7 @@
 }
 
 /* Limited Offer Badge */
-.offer-badge {
+.containerbanner .offer-badge {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -101,19 +107,19 @@
   font-weight: bold;
 }
 
-.icon {
+.containerbanner .icon {
   font-size: 14px;
   margin-bottom: 5px;
 }
 
 /* Back to Top Button */
-.back-to-top-container {
+.containerbanner .back-to-top-container {
   display: none;
   justify-content: center;
   margin-top: 20px;
 }
 
-.back-to-top {
+.containerbanner .back-to-top {
   background: white;
   color: black;
   padding: 8px 15px;
@@ -124,43 +130,45 @@
   font-weight: bold;
 }
 
-.back-to-top:hover {
+.containerbanner .back-to-top:hover {
   background: black;
   color: white;
   transition: 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
-  .sale-section {
+  .containerbanner .sale-section {
     display: flex; /* Ensure flexbox is applied */
-    flex-direction: row;
+    flex-direction: row;  display:none;
     gap: 30px; /* Optional: Adds spacing between elements */
   }
 
-  .sale-box {
+  .containerbanner .sale-box {
     width: 160%;
+  
+    height:00px;
   }
 
   /* Content Styles */
-  .content {
+  .containerbanner .content {
     position: relative;
-    z-index: 2;
+    z-index: 2;height:00px;
   }
 
-  .title {
+  .containerbanner .title {
     font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 5px;
   }
 
-  .subtitle {
+  .containerbanner .subtitle {
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
   /* Dotted Pattern */
-  .dotted-pattern {
+  .containerbanner .dotted-pattern {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -169,6 +177,6 @@
     gap: 3px;
   }
 }
-.sale-section {
+.containerbanner .sale-section {
   gap: 20px;
 }

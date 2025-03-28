@@ -75,6 +75,7 @@
 .suggestion-item {
   padding: 10px;
   cursor: pointer;
+  overflow: hidden;
   text-decoration: none;
   transition: background 0.2s ease-in-out;
 }
@@ -86,6 +87,7 @@
 .suggestion-item a {
   text-decoration: none;
   color: black;
+ 
   font-size: 16px;
 }
 
@@ -96,13 +98,12 @@
 /* Responsive Design for Small Screens */
 @media (max-width: 480px) {
   .search-container {
-   overflow:hidden;
-   
+    overflow: hidden;
   }
 
   .search-box {
     margin-top: 10.4%;
-    position: fixed;  /* Fixed layout shifting */
+    position: fixed; /* Fixed layout shifting */
     width: 90%;
   }
 

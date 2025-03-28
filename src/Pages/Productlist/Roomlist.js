@@ -1,9 +1,9 @@
 import React from "react";
 import "../Productlist/Productlist.css";
 import Data from "../../Database/Data.json";
-import { BsCartCheck } from "react-icons/bs";
+ 
 import { useNavigate } from "react-router-dom";
-
+import { FaShoppingCart } from "react-icons/fa";
 const Roomlist = () => {
   const navigate = useNavigate();
 
@@ -46,13 +46,13 @@ const Roomlist = () => {
                     </div>
                     <div className="flex items-center justify-between adddown">
                       <div className="flex">
-                        <div className="text-lg font-bold text-green-600">${product.price}</div>
+                        <div className="text-lg font-bold text-green-600">Rs {product.price}</div>
                         <div className="text-sm text-gray-500 line-through oldpeice">
-                          ${product.oldPrice}
+                           {product.oldPrice}
                         </div>
                       </div>
                       <button className="button">
-                      <BsCartCheck />
+                      <FaShoppingCart />
                       </button>
                     </div>
                   </div>

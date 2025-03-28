@@ -1,14 +1,13 @@
 /* Body Styling */
 .auth-wrapper {
-  position:fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   background-color: #f3f4f6;
   margin: -2% 0;
-  padding: 20px;
-  width:100vw;
+  padding: 0px 20px;
+  width: 100vw;
 }
 
 /* Form Box */
@@ -52,7 +51,7 @@
 /* Input Fields */
 .auth-form input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 1rem;
@@ -61,7 +60,7 @@
 
 .auth-form input:focus {
   outline: none;
-  border-color:rgb(21, 15, 138);
+  border-color: rgb(21, 15, 138);
   box-shadow: 0 0 4px rgb(21, 15, 134);
 }
 
@@ -80,12 +79,13 @@
 .checkbox-group input {
   width: 16px;
   height: 16px;
+  
 }
 
 /* Button */
 .auth-button {
   width: 100%;
-  background-color: rgb(13, 50, 129);
+  background-color: rgb(11, 40, 104);
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -97,7 +97,7 @@
 }
 
 .auth-button:hover {
-  background-color: rgb(7, 30, 82);
+  background-color: rgb(4, 22, 63);
 }
 
 /* Toggle Text */
@@ -110,7 +110,7 @@
 
 /* Links */
 .auth-link {
-  color: rgb(15, 56, 145);
+  color: rgb(10, 38, 97);
   font-weight: 500;
   text-decoration: none;
   margin-left: 5px;
@@ -120,7 +120,7 @@
 }
 
 .auth-link:hover {
-  color: rgb(8, 44, 122);
+  color: rgb(7, 27, 70);
 }
 .favorites-dropdown {
   width: 100%;
@@ -135,8 +135,8 @@
 
 /* Styling when dropdown is focused */
 .favorites-dropdown:focus {
-  border-color:rgb(21, 34, 151);
-  box-shadow: 0 0 5px rgba(9, 27, 129, 0.99);
+  border-color: rgb(11, 20, 100);
+  box-shadow: 0 0 5px rgba(9, 22, 99, 0.99);
 }
 
 /* Multi-select appearance */
@@ -154,32 +154,38 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .auth-box {
-      width: 50%;
-      padding: 40px;
+    width: 50%;
+    padding: 40px;
   }
 }
 
 @media (max-width: 768px) {
   .auth-box {
-      width: 80%;
-      padding: 20px;
+    width: 95%;
+    padding: 20px;
   }
+  .auth-wrapper {
+    
+    padding: 0px 10px;
+    width: 100vw;
+  }
+ 
 }
 
 @media (max-width: 480px) {
   .auth-box {
-      width: 100%;
-      padding: 10px;
+    width: 100%;
+    padding: 10px 8px;
   }
   .auth-title {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
   .auth-button {
-      font-size: 0.9rem;
-      padding: 8px;
+    font-size: 0.9rem;
+    padding: 8px;
   }
   .auth-form input {
-      font-size: 0.9rem;
-      padding: 8px;
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }

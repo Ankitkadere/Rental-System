@@ -36,7 +36,8 @@ body {
   background-color: rgb(20, 64, 145);
   color: white;
   font-weight: bold;
-  padding: 0.4rem 1rem;
+  font-size:12px;
+  padding: 1rem 1rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s;
 }

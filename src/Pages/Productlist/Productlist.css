@@ -181,18 +181,18 @@ a:hover {
     font-size: 0.6rem;
   }
   .text-lg {
-    font-size: 12px;
+    font-size: 15px;
   }
   .text-sm {
     font-size: 10px;
   }
   .oldpeice {
-    padding-top: 2px;
+    padding-top: 5px;
     margin-left: 2px;
   }
   .button {
     padding: 1px 12px;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom:6px;
   }
   .ml-2 {

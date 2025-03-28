@@ -8,7 +8,7 @@ const PopularProducts = () => {
   const navigate = useNavigate();
 
   const handleProductClick = (product) => {
-    navigate("/ProductDetailsPage", { state: { product } });
+    navigate("/Myproduct", { state: { product } });
   };
 
   return (

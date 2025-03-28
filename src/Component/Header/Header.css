@@ -1,6 +1,7 @@
 /* General Styles */
 .header {
-  background-color: rgb(0, 47, 150);
+  background-color: rgb(12, 49, 128);
+  border-radius: 0px;
   color: #fff;
   padding: 10px 0px;
   font-family: Arial, sans-serif;
@@ -13,11 +14,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align:center;
+  text-align: center;
   padding: 0 10px;
- 
 }
-
+.marque {
+  width: 65%;
+  overflow: hidden;
+}
+.marquee {
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  font-size:12px;
+  animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 .header .contact-info {
   width: auto;
   display: flex;
@@ -25,11 +43,11 @@
   gap: 10px;
   font-size: 14px;
 }
-.header .contact-info span{
- margin-top:-4px;
- margin-right:10px;
+.header .contact-info span {
+  margin-top: -4px;
+  margin-right: 10px;
 }
- 
+
 .header .social-icons {
   display: flex;
   gap: 15px;
@@ -49,7 +67,7 @@
 @media (max-width: 768px) {
   /* General Styles */
   .header {
-    padding: 0px 0px;
+    padding: 0px;
     font-family: Arial, sans-serif;
     font-size: 14px;
   }
@@ -58,17 +76,20 @@
     text-align: center;
     padding: 10px;
   }
-
+  .marque {
+    display: none;
+  }
   .header .contact-info {
     flex-direction: row;
     gap: 5px;
     text--align: center;
     font-size: 11px;
   }
-  .header .contact-info span{
-    margin-top:-2px;
-    margin-right:10px; font-size: 12px;
-   }
+  .header .contact-info span {
+    margin-top: -2px;
+    margin-right: 10px;
+    font-size: 12px;
+  }
 
   .header .sicon {
     font-size: 12px;

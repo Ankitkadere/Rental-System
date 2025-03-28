@@ -16,21 +16,22 @@ function Navtop() {
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-2">
           <Container className="mobile" fluid>
             <Navbar.Brand className="mobileflex flex">
-             <a href="/">Home</a>
+              <a href="/">Home</a>
               <a href="/Search">
-              <Form className="d-flex moblies">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-0"
-                  aria-label="Search"
-                />
-                <Link to="/Search">
-                  <Button variant="outline-success moblies search">
-                    <FaSearch className="Search"/>
-                  </Button>
-                </Link>
-              </Form></a>
+                <Form className="d-flex moblies">
+                  <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="me-0"
+                    aria-label="Search"
+                  />
+                  <Link to="/Search">
+                    <Button variant="outline-success moblies search">
+                      <FaSearch className="Search" />
+                    </Button>
+                  </Link>
+                </Form>
+              </a>
               <Navbar.Toggle aria-controls={`${expand}`}>
                 <FaRegUser size={23} />
               </Navbar.Toggle>
@@ -48,45 +49,78 @@ function Navtop() {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/Home">Home</Nav.Link>
-                  <Nav.Link href="/ProductDetailsPage">Product</Nav.Link>
+                  <Nav.Link className="dlink" href="/About">
+                    About
+                  </Nav.Link>
                   <NavDropdown
+                    className="ddownop"
                     title="Service"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
+                    <NavDropdown.Item href="/Room's">Room's</NavDropdown.Item>
+                    <NavDropdown.Item href="/Breakfast">
+                      Breakfast
                     </NavDropdown.Item>
+                    <NavDropdown.Item href="/Launch">Launch</NavDropdown.Item>{" "}
+                    <NavDropdown.Item href="/Dinner">Dinner</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
-                      Something else here
+                     Comming Soon
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
                   <NavDropdown
+                    className="ddownop"
+                    title="Category"
+                    id={`offcanvasNavbarDropdown-expand-${expand}`}
+                  >
+                    <NavDropdown.Item href="/Singleroom">
+                      Single Room
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/Doubleroom">
+                      Double Room
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/Studentroom">
+                      Student Room
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/Coupleroom">
+                      Couple Room
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/Familyroom">
+                      Family Room
+                    </NavDropdown.Item>{" "}
+                    <NavDropdown.Item href="/Onedayroom">
+                      One Day Room
+                    </NavDropdown.Item>
+                  </NavDropdown>
+
+                  <NavDropdown
+                    className="ddownop"
                     title="Account"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="/Login">Login</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Registration</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">
+                      Registration
+                    </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">Owner Login</NavDropdown.Item>
+                    <NavDropdown.Item href="/Login">
+                      Owner Login
+                    </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
                 <a href="/Search">
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2 logninput"
-                    aria-label="Search"
-                  />
-                  <Link to="/Search">
-                    <Button variant="outline-success">Search</Button>
-                  </Link>
-                </Form></a>
+                  <Form className="d-flex">
+                    <Form.Control
+                      type="search"
+                      placeholder="Search"
+                      className="me-2 logninput"
+                      aria-label="Search"
+                    />
+                    <Link to="/Search">
+                      <Button variant="outline-success">Search</Button>
+                    </Link>
+                  </Form>
+                </a>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

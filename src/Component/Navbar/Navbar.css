@@ -71,14 +71,20 @@ body {
 .nav-link:hover {
   color: rgb(21, 64, 158);
 }
-
+.ddownop{
+  margin-right:4%;
+}
+.dlink{
+    margin-right:5%;
+}
 /* Dropdown Menu */
 .navbar .dropdown-menu {
+  margin-top:5%;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border: none;
 }
-
+ 
 /* Form Input */
 .form-control {
   width: 100%;
@@ -132,6 +138,13 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     color: rgb(21, 64, 158);
+  }
+  .nav-link {
+    width:100vw;
+    color:rgb(21, 64, 158);
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+    margin: 2% 3%;
   }
   .form-control {
     width: 100%;
