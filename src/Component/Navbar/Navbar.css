@@ -143,6 +143,12 @@ body {
     font-weight: bold;
     color: rgb(21, 64, 158);
   }
+<<<<<<< HEAD
+=======
+  .componey{
+    font-size: 1.3rem;
+  }
+>>>>>>> c807e00 (Initial commit or update)
   .nav-link {
     width:100vw;
     color:rgb(21, 64, 158);

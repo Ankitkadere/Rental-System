@@ -18,6 +18,10 @@ import Single from "./Sections/Single Room/Single.js";
 import FilterByPrice from "./Component/Pagenotfound/FilterError.js";
 import Bigproducts from "./Admin/Big Product/Bigproduct.js";
 import CrudComponent from "./Admin";
+<<<<<<< HEAD
+=======
+import Registration from "./Login/Registration.js";
+>>>>>>> c807e00 (Initial commit or update)
 function App() {
   return (
     <>
@@ -33,6 +37,10 @@ function App() {
           <Route exact={true} path="/ProductBuy" element={<ProductBuy/>} />
           <Route exact={true} path="/Admin" element={<Admin/>} />
           <Route exact={true} path="/Login" element={<Login/>} />
+<<<<<<< HEAD
+=======
+          <Route exact={true} path="/Signup" element={<Registration/>} />
+>>>>>>> c807e00 (Initial commit or update)
           <Route exact={true} path="/Unablepage" element={<NotFound/>} />
           <Route exact={true} path="/FilterByPrice" element={<FilterByPrice/>} />
           <Route exact={true} path="/crud" element={<CrudComponent/>} />

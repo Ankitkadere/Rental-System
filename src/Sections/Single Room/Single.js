@@ -18,7 +18,11 @@ const Single = () => {
   };
 
   const filterProducts = (products) => {
+<<<<<<< HEAD
     return products.filter((product) => parseFloat(product.price) <= maxPrice);
+=======
+    return products.filter((product) => parseFloat(product.price) <= maxPrice && product.rating <= 2.8);
+>>>>>>> c807e00 (Initial commit or update)
   };
 
   const [isFilterVisible, setIsFilterVisible] = useState(false);
@@ -62,15 +66,24 @@ const Single = () => {
                 Rs <span id="min-price"> 0</span>
               </span>
               <span className="price-text">
+<<<<<<< HEAD
                 Rs<span id="max-price"> {maxPrice * 10}</span>
+=======
+                Rs<span id="max-price"> {maxPrice * 1}</span>
+>>>>>>> c807e00 (Initial commit or update)
               </span>
             </div>
             <input
               id="price-range"
               type="range"
               min="0"
+<<<<<<< HEAD
               max="1000"
               value={maxPrice}
+=======
+              max="10000"
+              value={maxPrice }
+>>>>>>> c807e00 (Initial commit or update)
               className="price-range-slider"
               onChange={handleRangeChange}
             />

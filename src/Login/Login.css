@@ -161,6 +161,10 @@
 
 @media (max-width: 768px) {
   .auth-box {
+<<<<<<< HEAD
+=======
+    margin: 5% auth;
+>>>>>>> c807e00 (Initial commit or update)
     width: 95%;
     padding: 20px;
   }
@@ -173,7 +177,12 @@
 
 @media (max-width: 480px) {
   .auth-box {
+<<<<<<< HEAD
     width: 100%;
+=======
+    margin:5% auto;
+    width: 95%;
+>>>>>>> c807e00 (Initial commit or update)
     padding: 10px 8px;
   }
   .auth-title {

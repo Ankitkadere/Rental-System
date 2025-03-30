@@ -16,7 +16,11 @@ function Navtop() {
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-2">
           <Container className="mobile" fluid>
             <Navbar.Brand className="mobileflex flex">
+<<<<<<< HEAD
               <a href="/">Home</a>
+=======
+              <a className="componey" href="/">BR</a>
+>>>>>>> c807e00 (Initial commit or update)
               <a href="/Search">
                 <Form className="d-flex moblies">
                   <Form.Control

@@ -67,6 +67,7 @@ const RoomSearch = () => {
                 <option value="0-50">$0 - $50</option>
                 <option value="51-100">$51 - $100</option>
                 <option value="101-150">$101 - $150</option>
+<<<<<<< HEAD
                 <option value="151-200">$151 - $200</option>
                 <option value="201-250">$201 - $250</option>
                 <option value="251-300">$251 - $300</option>
@@ -74,6 +75,9 @@ const RoomSearch = () => {
                 <option value="351-400">$351 - $400</option>
                 <option value="401-450">$401 - $450</option>
                 <option value="451-500">$451 - $500</option>
+=======
+               
+>>>>>>> c807e00 (Initial commit or update)
                 <option value="501+">$501+</option>
               </select>
             </div>

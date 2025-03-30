@@ -37,7 +37,11 @@ body {
   color: white;
   font-weight: bold;
   font-size:12px;
+<<<<<<< HEAD
   padding: 1rem 1rem;
+=======
+  padding: .5rem 1rem;
+>>>>>>> c807e00 (Initial commit or update)
   border-radius: 0.5rem;
   transition: background-color 0.3s;
 }
