@@ -52,7 +52,7 @@ const Roomlist = () => {
                         </div>
                       </div>
                       <button className="button">
-                      <FaShoppingCart />
+                     Book
                       </button>
                     </div>
                   </div>

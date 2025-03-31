@@ -11,7 +11,7 @@ body {
   background-color: #f3f4f6;
   z-index: 1000;
 }
- 
+
 .catch {
   margin-top: -5px;
   margin-bottom: -8px;
@@ -36,12 +36,9 @@ body {
   background-color: rgb(20, 64, 145);
   color: white;
   font-weight: bold;
-  font-size:12px;
-<<<<<<< HEAD
+  font-size: 12px;
   padding: 1rem 1rem;
-=======
-  padding: .5rem 1rem;
->>>>>>> c807e00 (Initial commit or update)
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s;
 }
@@ -83,7 +80,6 @@ body {
 .filter-container .price-text {
   color: rgb(0, 33, 80);
   font-size: 16px;
-  
 }
 
 .filter-container .price-range-slider {

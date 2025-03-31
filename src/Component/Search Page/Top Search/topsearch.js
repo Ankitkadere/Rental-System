@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Search.css";
+import { useEffect, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 const  Search = () => {
   const [query, setQuery] = useState("");
@@ -38,15 +39,28 @@ const  Search = () => {
     window.location.href = url;
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearchClick();
+    }
+  };
+  const mobileInputRef = useRef(null);
+  useEffect(() => {
+    if (mobileInputRef.current) {
+      mobileInputRef.current.focus();
+    }
+  }, []);
   return (
     <div className="search-container">
       <h1 className="search-title">Search For Better Result</h1>
       <div className="search-box">
         <input
+          ref={mobileInputRef} // Attach ref here
           type="text"
           value={query}
           onChange={handleInputChange}
           className="search-input"
+          onKeyDown={handleKeyPress}
           placeholder="Type here for search..."
         />
         <FaSearch className="search-icon" onClick={handleSearchClick}/>

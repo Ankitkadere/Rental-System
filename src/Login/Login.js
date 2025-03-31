@@ -46,7 +46,6 @@ const Login = () => {
     localStorage.removeItem("password");
     setMobile("");
     setPassword("");
-    
   };
 
   const handleSubmit = (event) => {
@@ -57,23 +56,25 @@ const Login = () => {
       localStorage.setItem("password", password);
       setMobile(mobile);
       setPassword(password);
-    }
-
-    if (isForgotPassword) {
+      document.getElementById("Adminfix").style.display = "block";
+    } else if (isForgotPassword) {
       alert(`Password reset link sent to ${mobile}`);
       setIsForgotPassword(false);
+      document.getElementById("Adminfix").style.display = "none";
     } else if (isLogin) {
-      alert("Alll Good");
+      document.getElementById("Adminfix").style.display = "block";
     } else if (existingUser) {
       alert("Already Exist");
+      document.getElementById("Adminfix").style.display = "none";
     } else {
       if (password !== confirmPassword) {
         alert("Passwords do not match!");
-        return;
+        document.getElementById("Adminfix").style.display = "none";
       }
       alert(`Registration successful!`);
       setIsLogin(true);
     }
+  
   };
 
   const handleFavoriteChange = (event) => {
@@ -175,8 +176,7 @@ const Login = () => {
 
         {activePage === "dashboard" && (
           <div className="dashboard-grid">
-            <PopularProducts
-            />
+            <PopularProducts />
           </div>
         )}
         {activePage === "ProductDetails" && (
@@ -314,7 +314,6 @@ const Login = () => {
           "Chart",
           "Complaint",
           "Service",
-          
         ].includes(activePage) && <NotFound />}
       </div>
     );
@@ -325,7 +324,7 @@ const Login = () => {
 
   return (
     <>
-      <div onSubmit={handleSubmit} className=" Adminfix">
+      <div   className="Adminfix" id="Adminfix">
         {Object.keys(Data).map((userID) => (
           <div key={userID}>
             <h2 className="d-none">{userID}</h2>
@@ -338,7 +337,11 @@ const Login = () => {
               .map((User, index) => (
                 <div key={index}>
                   <>
-                    <div className="flex h-screen w-screen" key={index}>
+                    <div
+                      className="flex h-screen w-screen "
+                      id="main-screen"
+                      key={index}
+                    >
                       {/* Sidebar */}
                       <div
                         className={`sidebar w-64 bg-white shadow-md absolute h-full ${
@@ -348,7 +351,7 @@ const Login = () => {
                       >
                         <div className="p-4 flex items-center">
                           <span className="ml-2 text-xl font-bold text-blue-800">
-                            My Rom
+                            BEST ROOM
                           </span>
                         </div>
                         <hr></hr>
@@ -490,210 +493,59 @@ const Login = () => {
         ))}
       </div>
 
-      <div className="auth-wrapper">
-        <div className="auth-box">
-          <h2 className="auth-title">
-            {isForgotPassword
-              ? "Forgot Password"
-              : isLogin
-              ? "User Login"
-              : "User Registration"}
-          </h2>
+      <div className="auth-box">
+        <h2 className="auth-title">User Login</h2>
+        <form className="auth-form"  >
+          <div>
+            <label htmlFor="mobile">Mobile Number</label>
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              placeholder="Enter your mobile number"
+              required
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+              pattern="[0-9]{10}"
+              maxLength="10"
+            />
+          </div>
 
-          <form className="auth-form" onSubmit={handleSubmit}>
-            {!isLogin && !isForgotPassword && (
-              <div>
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="John Doe"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-            )}
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="********"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-            <div>
-              <label htmlFor="mobile">Mobile Number</label>
-              <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                placeholder="Enter your mobile number"
-                required
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
-                pattern="[0-9]{10}" // Ensuring only 10-digit numbers
-                maxLength="10"
-              />
+          <div className="auth-options">
+            <div className="checkbox-group">
+              <input type="checkbox" id="remember_me" />
+              <label htmlFor="remember_me"> Remember me</label>
             </div>
-
-            {!isForgotPassword && (
-              <div>
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="********"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-            )}
-
-            {!isLogin && !isForgotPassword && (
-              <div>
-                <label htmlFor="confirm_password">Confirm Password</label>
-                <input
-                  type="password"
-                  id="confirm_password"
-                  name="confirm_password"
-                  placeholder="********"
-                  required
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-              </div>
-            )}
-
-            {/* Favorite Choices in Signup & Forgot Password */}
-            {(!isLogin || isForgotPassword) && (
-              <>
-                <div>
-                  <label htmlFor="state">Choose Your States:</label>
-                  <select
-                    id="states"
-                    name="States"
-                    className="favorites-dropdown"
-                    value={favorites}
-                    onChange={handleFavoriteChange}
-                  >
-                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                    <option value="Assam">Assam</option>
-                    <option value="Bihar">Bihar</option>
-                    <option value="Chhattisgarh">Chhattisgarh</option>
-                    <option value="Goa">Goa</option>
-                    <option value="Gujarat">Gujarat</option>
-                    <option value="Haryana">Haryana</option>
-                    <option value="Himachal Pradesh">Himachal Pradesh</option>
-                    <option value="Jharkhand">Jharkhand</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Madhya Pradesh" selected>
-                      Madhya Pradesh
-                    </option>
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Manipur">Manipur</option>
-                    <option value="Meghalaya">Meghalaya</option>
-                    <option value="Mizoram">Mizoram</option>
-                    <option value="Nagaland">Nagaland</option>
-                    <option value="Odisha">Odisha</option>
-                    <option value="Punjab">Punjab</option>
-                    <option value="Rajasthan">Rajasthan</option>
-                    <option value="Sikkim">Sikkim</option>
-                    <option value="Tamil Nadu">Tamil Nadu</option>
-                    <option value="Telangana">Telangana</option>
-                    <option value="Tripura">Tripura</option>
-                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-                    <option value="Uttarakhand">Uttarakhand</option>
-                    <option value="West Bengal">West Bengal</option>
-
-                    <option value="Andaman and Nicobar Islands">
-                      Andaman and Nicobar Islands
-                    </option>
-                    <option value="Chandigarh">Chandigarh</option>
-                    <option value="Dadra and Nagar Haveli and Daman and Diu">
-                      Dadra and Nagar Haveli and Daman and Diu
-                    </option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Lakshadweep">Lakshadweep</option>
-                    <option value="Puducherry">Puducherry</option>
-                    <option value="Ladakh">Ladakh</option>
-                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="pincode">Pin Code</label>
-                  <input
-                    type="number"
-                    id="pincode"
-                    name="pincode"
-                    placeholder="482001"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="favorites">Choose Your Favorites:</label>
-                  <select
-                    id="favorites"
-                    name="favorites"
-                    className="favorites-dropdown"
-                    value={favorites}
-                    onChange={handleFavoriteChange}
-                  >
-                    <option value="Animals">Animals</option>
-                    <option value="Dresses">Dresses</option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Travel">Travel</option>
-                    <option value="Food">Food</option>
-                  </select>
-                </div>
-              </>
-            )}
-
-            {isLogin && !isForgotPassword && (
-              <>
-                <div className="auth-options">
-                  <div className="checkbox-group">
-                    <input type="checkbox" id="remember_me" />
-                    <label htmlFor="remember_me"> Remember me</label>
-                  </div>
-                  <button
-                    type="button"
-                    className="auth-link"
-                    onClick={() => setIsForgotPassword(true)}
-                  >
-                    Forgot your password?
-                  </button>
-                </div>
-              </>
-            )}
-
-            <button type="submit" className="auth-button">
-              {isForgotPassword ? "Get Reset" : isLogin ? "Sign in" : "Sign up"}
+            <button type="button" className="auth-link">
+              Forgot your password?
             </button>
-          </form>
+          </div>
 
-          {!isForgotPassword && (
-            <p className="auth-toggle">
-              {isLogin ? "Don't have an account?" : "Already have an account?"}
-              <button
-                onClick={() => setIsLogin(!isLogin)}
-                className="auth-link"
-              >
-                {isLogin ? "Sign up" : "Sign in"}
-              </button>
-            </p>
-          )}
+          <button  onClick={handleSubmit} type="submit" className="auth-button">
+            Sign in
+          </button>
 
-          {isForgotPassword && (
-            <p className="auth-toggle">
-              Remembered your password?
-              <button
-                onClick={() => setIsForgotPassword(false)}
-                className="auth-link"
-              >
-                Sign in
-              </button>
-            </p>
-          )}
-        </div>
+          <p className="auth-toggle">
+            Don't have an account?{" "}
+            <Link to="/Signup">
+            <button className="auth-link" >
+              Sign up
+            </button></Link>
+          </p>
+        </form>
       </div>
     </>
   );

@@ -10,23 +10,22 @@ body {
   color: rgb(14, 56, 129);
   font-size: 1rem;
 }
-<<<<<<< HEAD
 
 .Adminfix {
   position: fixed;
   top: 0;
   left: 0;
-=======
-#Adminfix{
-  display:none;
+}
+#Adminfix {
+  display: none;
 }
 .Adminfix {
-  display:none;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  padding:0px;
->>>>>>> c807e00 (Initial commit or update)
+  padding: 0px;
+
   overflow-y: auto;
   height: 100vh;
   z-index: 1000;
@@ -105,15 +104,6 @@ body {
 
 /* Main content styles */
 .content {
-<<<<<<< HEAD
-  width: 84vw;
-  margin-left: 14rem;
-  padding: 2rem;
-  transition: margin-left 0.3s ease;
-  background: #f7fafc;
-  min-height: 100vh;
-  margin-top: -2%;
-=======
   width: 81vw;
   margin-left: 15.5rem;
   padding: 0px;
@@ -121,7 +111,6 @@ body {
   background: #f7fafc;
   min-height: 100vh;
   margin-top: 0%;
->>>>>>> c807e00 (Initial commit or update)
 }
 .toggleset {
   color: white;
@@ -162,11 +151,7 @@ body {
 /* Responsive styles */
 @media (max-width: 768px) {
   .sidebar-hidden {
-<<<<<<< HEAD
-    transform: translateX(0%);
-=======
     transform: translateX(-100%);
->>>>>>> c807e00 (Initial commit or update)
   }
 
   .sidebar {
@@ -182,11 +167,8 @@ body {
   .content {
     width: 100vw;
     margin-left: 0;
-<<<<<<< HEAD
-    padding: 1rem;
-=======
+
     padding: 0px;
->>>>>>> c807e00 (Initial commit or update)
   }
 }
 
@@ -210,21 +192,19 @@ body {
   color: white;
   cursor: pointer;
   padding: 10px;
- 
-  
 }
-.tgicon{
-  font-size: 25px; display:none;
+.tgicon {
+  font-size: 25px;
+  display: none;
 }
 
 .Adminfix .content-wrapper .page-title {
   font-size: 30px;
   font-weight: bold;
   color: white;
-<<<<<<< HEAD
-=======
-  margin-left:2%;
->>>>>>> c807e00 (Initial commit or update)
+
+  margin-left: 2%;
+
   text-transform: capitalize;
 }
 
@@ -299,35 +279,28 @@ body {
 }
 
 /* Mobile Responsiveness */
-<<<<<<< HEAD
-@media (max-width: 600px) {
-=======
+
 @media (max-width: 800px) {
->>>>>>> c807e00 (Initial commit or update)
   .Adminfix .content-wrapper .search-box {
     display: block;
   }
 
   .Adminfix .content-wrapper .dashboard-grid {
     grid-template-columns: 1fr;
-<<<<<<< HEAD
-=======
-    margin:2%;
->>>>>>> c807e00 (Initial commit or update)
+
+    margin: 2%;
   }
-  .tgicon{
-     display:block;margin-top:4%;
+  .tgicon {
+    display: block;
+    margin-top: 4%;
   }
   .Adminfix .content-wrapper .page-title {
-<<<<<<< HEAD
-    font-size: 25px;margin-top:2%;
-=======
-    font-size: 25px;margin-top:2%; margin-left:1%;
->>>>>>> c807e00 (Initial commit or update)
+    font-size: 25px;
+    margin-top: 2%;
+    margin-left: 1%;
   }
 
   .Adminfix .content-wrapper .menu-toggle {
     font-size: 16px;
-    
   }
 }

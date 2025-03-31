@@ -18,7 +18,11 @@ const Single = () => {
   };
 
   const filterProducts = (products) => {
-    return products.filter((product) => parseFloat(product.price) <= maxPrice && product.rating <= 2.8);
+    if (maxPrice === 0) {
+       <FilterByPrice/>
+    }
+
+    return products.filter((product) => parseFloat(product.price) <= maxPrice);
   };
 
   const [isFilterVisible, setIsFilterVisible] = useState(false);
@@ -34,25 +38,24 @@ const Single = () => {
   };
   return (
     <>
-   
-        <div className="catch">
-          <div className="leftright">
-            <Link to="/Search" className="leftright">
-              <MdKeyboardDoubleArrowLeft className="sicon" />
-              <h5> Single Room ....</h5>
-            </Link>
-          </div>
-          <div className="leftright">
-            <button
-              id="toggle-filter"
-              className="toggle-filter-button"
-              onClick={toggleFilterVisibility}
-            >
-              <IoFilter className="sicona" /> Filter
-            </button>
-          </div>
+      <div className="catch">
+        <div className="leftright">
+          <Link to="/Search" className="leftright">
+            <MdKeyboardDoubleArrowLeft className="sicon" />
+            <h5> Single Room ....</h5>
+          </Link>
         </div>
-  
+        <div className="leftright">
+          <button
+            id="toggle-filter"
+            className="toggle-filter-button"
+            onClick={toggleFilterVisibility}
+          >
+            <IoFilter className="sicona" /> Filter
+          </button>
+        </div>
+      </div>
+
       <div className="gridbox">
         <div className="filter-container">
           <div className={`filter-box ${isFilterVisible ? "" : "hidden"}`}>
@@ -70,7 +73,7 @@ const Single = () => {
               type="range"
               min="0"
               max="10000"
-              value={maxPrice }
+              value={maxPrice}
               className="price-range-slider"
               onChange={handleRangeChange}
             />
@@ -134,7 +137,7 @@ const Single = () => {
                         </div>
                       </div>
                       <button className="button">
-                        <FaShoppingCart/>
+                        <FaShoppingCart />
                       </button>
                     </div>
                   </div>

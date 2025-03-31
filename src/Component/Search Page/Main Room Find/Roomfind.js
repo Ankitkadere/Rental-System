@@ -5,13 +5,23 @@ const RoomSearch = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const areas = [
-    "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", 
-    "San Antonio", "San Diego", "Dallas", "San Jose"
+    "New York",
+    "Los Angeles",
+    "Chicago",
+    "Houston",
+    "Phoenix",
+    "Philadelphia",
+    "San Antonio",
+    "San Diego",
+    "Dallas",
+    "San Jose",
   ];
 
   useEffect(() => {
     if (query) {
-      const filteredAreas = areas.filter(area => area.toLowerCase().startsWith(query.toLowerCase()));
+      const filteredAreas = areas.filter((area) =>
+        area.toLowerCase().startsWith(query.toLowerCase())
+      );
       setSuggestions(filteredAreas);
     } else {
       setSuggestions([]);
@@ -30,19 +40,19 @@ const RoomSearch = () => {
         <form>
           <div className="input-group">
             <label htmlFor="area">Area</label>
-            <input 
-              type="text" 
-              id="area" 
-              value={query} 
-              onChange={(e) => setQuery(e.target.value)} 
-              className="input" 
+            <input
+              type="text"
+              id="area"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="input"
               placeholder="Enter area"
             />
             <div className="suggestions">
               {suggestions.map((area, index) => (
-                <div 
-                  key={index} 
-                  className="suggestion-item" 
+                <div
+                  key={index}
+                  className="suggestion-item"
                   onClick={() => handleSuggestionClick(area)}
                 >
                   {area}
@@ -67,22 +77,20 @@ const RoomSearch = () => {
                 <option value="0-50">$0 - $50</option>
                 <option value="51-100">$51 - $100</option>
                 <option value="101-150">$101 - $150</option>
-<<<<<<< HEAD
                 <option value="151-200">$151 - $200</option>
                 <option value="201-250">$201 - $250</option>
                 <option value="251-300">$251 - $300</option>
                 <option value="301-350">$301 - $350</option>
                 <option value="351-400">$351 - $400</option>
                 <option value="401-450">$401 - $450</option>
-                <option value="451-500">$451 - $500</option>
-=======
-               
->>>>>>> c807e00 (Initial commit or update)
+                <option value="451-500">$451 - $500</option>=
                 <option value="501+">$501+</option>
               </select>
             </div>
           </div>
-          <button type="submit" className="search-button">Search</button>
+          <button type="submit" className="search-button">
+            Search
+          </button>
         </form>
       </div>
     </div>

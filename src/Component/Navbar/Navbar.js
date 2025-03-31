@@ -16,12 +16,9 @@ function Navtop() {
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-2">
           <Container className="mobile" fluid>
             <Navbar.Brand className="mobileflex flex">
-              <a href="/">Home</a>
-
               <a className="componey" href="/">
                 BR
               </a>
-
               <a href="/Search">
                 <Form className="d-flex moblies">
                   <Form.Control
@@ -62,14 +59,20 @@ function Navtop() {
                     title="Service"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="/Room's">Room's</NavDropdown.Item>
-                    <NavDropdown.Item href="/Breakfast">
+                    <NavDropdown.Item href="/Unablepage">
+                      Room's
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/Unablepage">
                       Breakfast
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/Launch">Launch</NavDropdown.Item>{" "}
-                    <NavDropdown.Item href="/Dinner">Dinner</NavDropdown.Item>
+                    <NavDropdown.Item href="/Unablepage">
+                      Launch
+                    </NavDropdown.Item>{" "}
+                    <NavDropdown.Item href="/Unablepage">
+                      Dinner
+                    </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
+                    <NavDropdown.Item href="/Unablepage">
                       Comming Soon
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -104,7 +107,7 @@ function Navtop() {
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="/Login">Login</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
+                    <NavDropdown.Item href="/Signup">
                       Registration
                     </NavDropdown.Item>
                     <NavDropdown.Divider />

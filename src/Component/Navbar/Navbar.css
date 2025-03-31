@@ -57,12 +57,12 @@ body {
 .offcanvas-title {
   font-size: 1.2rem;
   font-weight: bold;
-  color:rgb(21, 64, 158);
+  color: rgb(21, 64, 158);
 }
 
 /* Navbar Links */
 .nav-link {
-  color:rgb(21, 64, 158);
+  color: rgb(21, 64, 158);
   font-size: 1rem;
   transition: color 0.3s ease-in-out;
   margin: 0 3%;
@@ -71,31 +71,31 @@ body {
 .nav-link:hover {
   color: rgb(21, 64, 158);
 }
-.ddownop{
-  margin-right:4%;
+.ddownop {
+  margin-right: 4%;
 }
-.dlink{
-    margin-right:5%;
+.dlink {
+  margin-right: 5%;
 }
 /* Dropdown Menu */
 .navbar .dropdown-menu {
-  margin-top:5%;
+  margin-top: 5%;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border: none;
 }
- 
+
 /* Form Input */
 .form-control {
   width: 100%;
   border-radius: 50px;
   border: 1px solid rgb(21, 64, 158);
-  padding: 8px 12px;
+  padding: 6px 12px;
 }
-.form-control:focus, .form-control:hover{
+.form-control:focus,
+.form-control:hover {
   outline: none !important;
   box-shadow: none !important;
-   
 }
 /* Search Button */
 .btn-outline-success {
@@ -143,15 +143,14 @@ body {
     font-weight: bold;
     color: rgb(21, 64, 158);
   }
-<<<<<<< HEAD
-=======
-  .componey{
+
+  .componey {
     font-size: 1.3rem;
   }
->>>>>>> c807e00 (Initial commit or update)
+
   .nav-link {
-    width:100vw;
-    color:rgb(21, 64, 158);
+    width: 100vw;
+    color: rgb(21, 64, 158);
     font-size: 1rem;
     transition: color 0.3s ease-in-out;
     margin: 2% 3%;
@@ -175,7 +174,7 @@ body {
     background: none; /* Remove background if needed */
     box-shadow: none !important; /* Prevent any focus shadows */
   }
-  
+
   .navbar-toggler:focus,
   .navbar-toggler:hover {
     border: none !important;
@@ -183,13 +182,14 @@ body {
     background: none; /* Ensure no background change */
     box-shadow: none !important;
   }
-  
+
   .moblies {
     display: block;
     font-size: 19px;
     padding: 0px;
   }
-  .mobiles:hover,.mobiles:focus{
+  .mobiles:hover,
+  .mobiles:focus {
     border: none !important;
     outline: none !important;
     background: none; /* Remove background if needed */

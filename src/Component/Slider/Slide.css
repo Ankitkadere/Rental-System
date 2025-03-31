@@ -1,6 +1,6 @@
 .slider-container {
   width: 95%;
-  height: 350px;
+  height: 250px;
   margin:1%  auto;
   border-radius: 20px;
   overflow: hidden;
@@ -9,7 +9,7 @@
 }
 
 .slider-img {
-  height: 350px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
 }
