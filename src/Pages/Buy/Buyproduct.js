@@ -5,13 +5,7 @@ const ProductBuy = () => {
   return (
     <div className="Buy">
       <div className="form-card">
-        <div className="image-container">
-          <img
-            src="https://img.freepik.com/premium-psd/birthday-cake-social-media-promotion-instagram-banner-template_545154-89.jpg?semt=ais_hybrid"
-            alt="Cake with text 'It's time to celebrate!'"
-          />
-        </div>
-        <h1 className="title">CAKE BOOKING</h1>
+        <h1 className="title">ROOM BOOKING</h1>
         <p className="description">
           Please fill in the details to book your cake.
         </p>
@@ -69,7 +63,6 @@ const ProductBuy = () => {
               <select id="day">
                 <option>Please select a day</option>
               </select>
-              
             </div>
           </div>
           <div className="form-group">

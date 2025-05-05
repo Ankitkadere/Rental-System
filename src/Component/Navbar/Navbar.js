@@ -9,6 +9,16 @@ import "../Navbar/Navbar.css";
 import { FaSearch, FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
+import {
+  FaHeart,
+  FaShoppingCart,
+  FaChevronDown,
+  FaChevronLeft,
+  FaChevronRight,
+  FaTruck,
+} from "react-icons/fa";
+import Navset from "./navset";
+
 function Navtop() {
   return (
     <>

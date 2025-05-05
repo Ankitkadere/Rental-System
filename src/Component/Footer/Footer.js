@@ -86,17 +86,17 @@ const Footer = () => {
                 <h3>Contact</h3>
                 <ul>
                   <li>
-                    <i className="fas fa-store"></i> GIFTY GIFT STORE
+                    <i className="fas fa-store"></i> BEST ROOM
                   </li>
                   <li>
-                    <i className="fas fa-phone"></i> +91 99321 05832
+                    <i className="fas fa-phone"></i> +91 917-475-0864
                   </li>
                   <li>
-                    <i className="fas fa-envelope"></i> info@giftyonline.com
+                    <i className="fas fa-envelope"></i> kaderesofttech@gmail.com
                   </li>
                   <li>
-                    <i className="fas fa-map-marker-alt"></i> 14 SR Road,
-                    Mumbai, 400001
+                    <i className="fas fa-map-marker-alt"></i> Sharda Chowck,
+                   Madan Mahal, 482001
                   </li>
                 </ul>
               </div>
@@ -107,13 +107,10 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="fcopyright">
-          <p>© 2025 Gifty. All Rights Reserved.</p>
+          <p>© 2025 Kadere Technology. All Rights Reserved.</p>
         </div>
         <div className="footer-payments">
-          <img src="https://placehold.co/16x16" alt="" />
-          <img src="https://placehold.co/16x16" alt="" />
-          <img src="https://placehold.co/16x16" alt="" />
-          <img src="https://placehold.co/16x16" alt="" />
+          
         </div>
       </div>
     </>

@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+ 
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../Login/Login.css"; // Ensure you have the correct CSS path
 import Unablepage from "../Component/Pagenotfound/Notfound";
-import Data from "../Database/Login.json";
 import { BsCartCheck } from "react-icons/bs";
 import "../Login/Admin.css";
 import { FaBars } from "react-icons/fa";
@@ -18,7 +18,8 @@ import "../Login/Admin.css";
 import { GrServices } from "react-icons/gr";
 import Bigproducts from "../Admin/Big Product/Bigproduct";
 import { Link } from "react-router-dom"; // Import useLocation
-
+import AddRoomForm from "../Admin/Rooms/Addproducts";
+import Spinner from "react-bootstrap/Spinner";
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
@@ -28,7 +29,57 @@ const Login = () => {
   const [name, setName] = useState("");
   const [favorites, setFavorites] = useState([]); // State for favorite selections
   const navigate = useNavigate();
+  const [Data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const location = useLocation();
+  const [roomList, setRoomList] = useState([]); // <- For displaying available rooms
 
+  const product = location.state?.product;
+
+  const [room, setRoom] = useState({
+    Unique: "",
+    Mob: "",
+    Image: "",
+    Tittle: "",
+    Description: "",
+    Category: "",
+    Availability: "",
+    Wifi: "",
+    Kitchen: "",
+    Toilet: "",
+    Bill: "",
+    Price: "",
+    OldPrice: "",
+    Rating: "",
+    Brand: "",
+    Information: "",
+    ReturnPolicy: "",
+    PaymentOptions: "",
+    Address: "",
+    State: "",
+    City: "",
+    Pincode: "",
+    RoomType: "",
+  });
+
+  const generateRandomValue = () => {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
+    for (let i = 0; i < 8; i++) {
+      result += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    return result;
+  };
+
+  useEffect(() => {
+    const randomValue = generateRandomValue();
+    setRoom((prev) => ({ ...prev, Unique: randomValue }));
+  }, []);
+  // Fetching Users Data
   useEffect(() => {
     const savedMobile = localStorage.getItem("mobile");
     const savedPassword = localStorage.getItem("password");
@@ -37,9 +88,24 @@ const Login = () => {
       setMobile(savedMobile);
       setPassword(savedPassword);
     }
+
+    const fetchAllUsers = async () => {
+      try {
+        const res = await fetch("https://sheetdb.io/api/v1/wukwgcz66x0es");
+        const data = await res.json();
+        setData(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+        <Unablepage />;
+        setLoading(false);
+      }
+    };
+
+    fetchAllUsers();
   }, []);
 
-  const existingUser = Data.Users.find((User) => User.Number === mobile);
+  const existingUser = Data.find((user) => user.Mobile === mobile);
 
   const handleClearLocalStorage = () => {
     localStorage.removeItem("mobile");
@@ -51,7 +117,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (document.getElementById("remember_me").checked) {
+    if (document.getElementById("remember_me")?.checked) {
       localStorage.setItem("mobile", mobile);
       localStorage.setItem("password", password);
       setMobile(mobile);
@@ -70,12 +136,17 @@ const Login = () => {
       if (password !== confirmPassword) {
         alert("Passwords do not match!");
         document.getElementById("Adminfix").style.display = "none";
+        return;
       }
       alert(`Registration successful!`);
       setIsLogin(true);
     }
-  
   };
+
+  // Optional: Filter based on search input
+  const userData = Array.isArray(Data)
+    ? Data.filter((user) => parseInt(user.Mobile) === parseInt(mobile))
+    : [];
 
   const handleFavoriteChange = (event) => {
     const selectedOptions = Array.from(
@@ -91,7 +162,6 @@ const Login = () => {
   const handleClearLocal = () => {
     localStorage.removeItem("mobile");
     localStorage.removeItem("password");
-    alert("Saved data cleared!");
   };
 
   const toggleSidebar = () => {
@@ -100,6 +170,139 @@ const Login = () => {
 
   const loadPage = (page, element) => {
     setActivePage(page);
+  };
+
+  const handleChange = (e) => {
+    setData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleUpChange = (e) => {
+    const { name, value, type, files } = e.target;
+    if (type === "file") {
+      const file = files[0];
+      if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        setRoom((prev) => ({ ...prev, [name]: imageUrl }));
+      }
+    } else {
+      setRoom((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+  // ✅ Place this here - before any early returns
+  const currentUser = Array.isArray(userData)
+    ? [...userData]
+        .reverse()
+        .find(
+          (user) =>
+            parseInt(user.Mobile) === parseInt(mobile) &&
+            user.Password === password
+        )
+    : null;
+
+  useEffect(() => {
+    if (currentUser) {
+      setRoom((prev) => ({
+        ...prev,
+        Mob: currentUser.Mobile || "",
+        Address: currentUser.Address || "",
+        City: currentUser.City || "",
+        State: currentUser.State || "",
+        Pincode: currentUser.Pincode || "",
+      }));
+    }
+  }, [currentUser]);
+
+  if (loading) return <Spinner animation="border m-auto" variant="primary" />;
+  if (error) return <p>{error}</p>;
+
+  const PopularProducts = () => { 
+  
+    useEffect(() => {
+      const fetchRooms = async () => {
+        try {
+          const response = await fetch("https://sheetdb.io/api/v1/cqydgetbk3ekl");
+          const data = await response.json();
+          const filteredRooms = data.filter(
+            (room) => parseInt(room.Mob) === parseInt(9174750864)
+          );
+          setRoom(filteredRooms);
+          
+        } catch (error) {
+          console.error("Error fetching rooms:", error);
+        }
+      };
+  
+      fetchRooms();
+    }, []);
+  
+  
+  }
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    const { Image, ...formData } = room;
+    const payload = { data: [formData] };
+
+    try {
+      const response = await fetch("https://sheetdb.io/api/v1/cqydgetbk3ekl", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const responseData = await response.json();
+      console.log("API Response:", responseData);
+
+      if (response.ok) {
+        alert("Room added successfully!");
+        
+        setRoom({
+          Unique: "",
+          Mob: "",
+          Image: "",
+          Tittle: "",
+          Description: "",
+          Category: "",
+          Availability: "",
+          Wifi: "",
+          Kitchen: "",
+          Toilet: "",
+          Bill: "",
+          Price: "",
+          OldPrice: "",
+          Rating: "",
+          Brand: "",
+          Information: "",
+          ReturnPolicy: "",
+          PaymentOptions: "",
+          Address: "",
+          State: "",
+          City: "",
+          Pincode: currentUser.Pincode,
+          RoomType: "",
+        });
+      } else {
+        alert("Failed to send data.");
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      alert("Submission failed. Please try again.");
+    }
+ 
+    
+    const handleNavigate = (product) => {
+      navigate("/details", {
+        state: {
+          room,
+          mobile,
+          password,
+          name,
+          favorites,
+        },
+      });
+    };
   };
 
   const renderContent = () => {
@@ -123,140 +326,146 @@ const Login = () => {
         </div>
         <hr />
 
-        {Object.keys(Data).map((userID) => (
-          <div key={userID}>
-            <h2 className="d-none">{userID}</h2>
-            {Data[userID]
-              .filter(
-                (User) =>
-                  parseFloat(User.Number) === parseInt(mobile) &&
-                  User.Password === password
-              )
-              .map((User, index) => (
-                <div key={index}>
-                  <>
-                    {activePage === "Owner" && (
-                      <div className="dashboard-grid">
-                        {[
-                          {
-                            title: User.FullName,
-                            value: "Owner/Manager",
-                            change: "Full Name",
-                            className: "sales",
-                          },
-                          {
-                            title: User.Number,
-                            value: "Mobile Number",
-                            change: "Registered Mobile Number",
-                            className: "orders",
-                          },
-                          {
-                            title: User.Password,
-                            value: "Password",
-                            change: "Verified Password",
-                            className: "visitors",
-                          },
-                        ].map((stat, index) => (
-                          <div
-                            key={index}
-                            className={`stat-card ${stat.className}`}
-                          >
-                            <h2>{stat.title}</h2>
-                            <p className="stat-value">{stat.value}</p>
-                            <p className="stat-change">{stat.change}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                </div>
-              ))}
+        {currentUser && activePage === "Owner" && (
+          <div className="dashboard-grid">
+            {[
+              {
+                title: currentUser.Name,
+                value: "Owner/Manager",
+                change: "Full Name",
+                className: "sales",
+              },
+              {
+                title: currentUser.Mobile,
+                value: "Mobile Number",
+                change: "Registered Mobile Number",
+                className: "orders",
+              },
+              {
+                title: currentUser.Password,
+                value: "Password",
+                change: "Verified Password",
+                className: "visitors",
+              },
+              {
+                title: currentUser.Address,
+                value: "Address",
+                change: "Location",
+                className: "sales",
+              },
+              {
+                title: currentUser.State,
+                value: "State",
+                change: "Registered State",
+                className: "orders",
+              },
+              {
+                title: currentUser.City,
+                value: "City",
+                change: "Verified City",
+                className: "visitors",
+              },
+              {
+                title: currentUser.Pincode,
+                value: "Pin Code",
+                change: "Registered Pincode",
+                className: "orders",
+              },
+              {
+                title: currentUser.FavoriteType,
+                value: "Favorite Type",
+                change: "User Preference",
+                className: "visitors",
+              },
+            ].map((stat) => (
+              <div className={`stat-card ${stat.className}`}>
+                <h2>{stat.title}</h2>
+                <p className="stat-value">{stat.value}</p>
+                <p
+                  onClick={() => {
+                    loadPage("EditProfile");
+                  }}
+                  className="stat-change"
+                >
+                  {stat.change}
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
 
         {activePage === "dashboard" && (
           <div className="dashboard-grid">
             <PopularProducts />
+ 
+             
+                <div className="popularproducts">
+                  <h2>Available Rooms</h2>
+                  <div className="product-list">
+                    {roomList.length === 0 ? (
+                      <p>No rooms found.</p>
+                    ) : (
+                      roomList.map((room, index) => (
+                        <div className="card" key={index}>
+                          <span className="badge badge-hot">Rent</span>
+                          {room.Image && (
+                            <img
+                              src={room.Image}
+                              alt={room.Tittle}
+                              className="product-image"
+                              style={{ cursor: "pointer" }}
+                              
+                            />
+                          )}
+                        
+                          <h2 className="text-lg font-semibold">{room.Tittle}</h2>
+                          <div className="text-sm text-gray-500">{room.Category}</div>
+                          <div className="flex items-center mb-0">
+                            {[...Array(5)].map((_, i) => (
+                              <span
+                                key={i}
+                                className={
+                                  i < parseFloat(room.Rating || 0)
+                                    ? "text-yellow-500"
+                                    : "text-gray-300"
+                                }
+                              >
+                                ★
+                              </span>
+                            ))}
+                            <span className="ml-1 text-gray-600">
+                              ({room.Rating || 0})
+                            </span>
+                          </div>
+                      
+                          <div className="text-sm text-gray-500 mb-[-5px] mt-[-5px] additional">
+                            By {room.Brand}
+                          </div>
+                          <div className="flex items-center justify-between adddown">
+                            <div className="flex">
+                              <div className="text-lg font-bold text-green-600">
+                                ₹{room.Price}
+                              </div>
+                              <div className="text-sm text-gray-500 line-through oldpeice">
+                                {room.OldPrice}
+                              </div>
+                            </div>
+                            <button
+                            
+                              className="button"
+                            >
+                              View
+                            </button>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+        
           </div>
         )}
-        {activePage === "ProductDetails" && (
-          <>
-            if (!product) {<Unablepage />}
-            <div className="dashboard-grid">
-              <>
-                <div className="product-details">
-                  <div className="product-images">
-                    <img src={product.image} alt={product.title} />
-                  </div>
-                  <div className="product-info">
-                    <h1>{product.title}</h1>
-                    <p>{product.description}</p>
-                    <div className="flex">
-                      <p className="price mr-5">Rs {product.price} / Month</p>
-                      <p className="availability">: {product.availability}</p>
-                    </div>
-                    <div className="specifications">
-                      <ul>
-                        <li>Wifi: {product.Wifi}</li>
-                        <li>Kitchen: {product.Kitchen}</li>
-                        <li>Toilet: {product.Toilet}</li>
-                        <li>E-Bill: {product.Bill}</li>
-                      </ul>
-                    </div>
-
-                    <div className="product-variants">
-                      <h3>Address</h3>
-                      <ul>
-                        {product.variants?.map((variant, index) => (
-                          <li key={index}>{variant}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="cta-buttons">
-                      <Link to="/ProductBuy" className="buybutton">
-                        Book Now
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="product-info">
-                  <div className="product-details productpolicy">
-                    <div className="shipping-info">
-                      <h3>Information</h3>
-                      <p>{product.information}</p>
-                    </div>
-
-                    <div className="return-policy">
-                      <h3>Refund Policy</h3>
-                      <p>{product.returnPolicy}</p>
-                    </div>
-
-                    <div className="warranty">
-                      <h3>Product Warranty</h3>
-                      <p>{product.warranty}</p>
-                    </div>
-
-                    <div className="payment-options">
-                      <h3>Payment Options</h3>
-                      <p> {product.paymentOptions}</p>
-                    </div>
-                  </div>
-                  <div className="related-products">
-                    <h3>Related Products</h3>
-                    <ul>
-                      {product.relatedProducts?.map((related, index) => (
-                        <li key={index}>
-                          {related.name} - ${related.price}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </>
-            </div>
-          </>
-        )}
+        {activePage === "ProductDetails" && <></>}
         {activePage === "Anylatics" && (
           <div className="dashboard-grid">
             {[
@@ -290,21 +499,522 @@ const Login = () => {
         {activePage === "Chart" && (
           <div className="page-content">
             <h2>Analytics Overview</h2>
-            <p>
-              Gain insights into your data with real-time statistics and trends.
-            </p>
+            <div className="dashboard-grid">
+              {[
+                {
+                  title: "Weekly Sales",
+                  value: "$150,000",
+                  change: "Increased by 60%",
+                  className: "sales",
+                },
+                {
+                  title: "Weekly Orders",
+                  value: "45,633",
+                  change: "Decreased by 10%",
+                  className: "orders",
+                },
+                {
+                  title: "Visitors Online",
+                  value: "95,574",
+                  change: "Increased by 5%",
+                  className: "visitors",
+                },
+              ].map((stat, index) => (
+                <div key={index} className={`stat-card ${stat.className}`}>
+                  <h2>{stat.title}</h2>
+                  <p className="stat-value">{stat.value}</p>
+                  <p className="stat-change">{stat.change}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
         {activePage === "Complaint" && (
           <div className="page-content">
-            <h2>Complaint Management</h2>
-            <p>Efficiently track and resolve customer complaints with ease.</p>
+            <h2>Analytics Overview</h2>
+            <div className="dashboard-grid">
+              {[
+                {
+                  title: "Weekly Sales",
+                  value: "$150,000",
+                  change: "Increased by 60%",
+                  className: "sales",
+                },
+                {
+                  title: "Weekly Orders",
+                  value: "45,633",
+                  change: "Decreased by 10%",
+                  className: "orders",
+                },
+                {
+                  title: "Visitors Online",
+                  value: "95,574",
+                  change: "Increased by 5%",
+                  className: "visitors",
+                },
+              ].map((stat, index) => (
+                <div key={index} className={`stat-card ${stat.className}`}>
+                  <h2>{stat.title}</h2>
+                  <p className="stat-value">{stat.value}</p>
+                  <p className="stat-change">{stat.change}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
         {activePage === "Service" && (
           <div className="page-content">
-            <h2>Our Services</h2>
-            <p>Explore and manage the services offered by our platform.</p>
+            <h2>Analytics Overview</h2>
+            <div className="dashboard-grid">
+              {[
+                {
+                  title: "Weekly Sales",
+                  value: "$150,000",
+                  change: "Increased by 60%",
+                  className: "sales",
+                },
+                {
+                  title: "Weekly Orders",
+                  value: "45,633",
+                  change: "Decreased by 10%",
+                  className: "orders",
+                },
+                {
+                  title: "Visitors Online",
+                  value: "95,574",
+                  change: "Increased by 5%",
+                  className: "visitors",
+                },
+              ].map((stat, index) => (
+                <div key={index} className={`stat-card ${stat.className}`}>
+                  <h2>{stat.title}</h2>
+                  <p className="stat-value">{stat.value}</p>
+                  <p className="stat-change">{stat.change}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {activePage === "AddRoom" && (
+          <div className="page-content">
+            <div className="form-wrapper">
+              <form onSubmit={handleUpdate} className="room-form">
+                {/* Hidden Field */}
+                <input
+                  type="text"
+                  name="Unique"
+                  value={room.Unique}
+                  onChange={handleUpChange}
+                  className="d-none"
+                  readOnly
+                />
+
+                {/* Room ID */}
+
+                <input
+                  type="text"
+                  name="Mob"
+                  value={room.Mob}
+                  onChange={handleUpChange}
+                  placeholder="Enter Room ID"
+                  required
+                  className="d-none"
+                />
+
+                {/* Room Type */}
+
+                <select
+                  name="RoomType"
+                  value={room.RoomType}
+                  onChange={handleUpChange}
+                  required
+                >
+                  <option value="" disabled>
+                    Select Room Type
+                  </option>
+                  {[
+                    "Single Room",
+                    "Double Room",
+                    "Deluxe Room",
+                    "Student Room",
+                    "Hostel",
+                    "Suite",
+                    "Shared Room",
+                    "Penthouse",
+                    "Luxury Villa",
+                    "Family Room",
+                    "Guest House",
+                    "Other",
+                  ].map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Image Upload */}
+                <label>Upload Room Image</label>
+                <input
+                  type="text"
+                  name="Image"
+                  accept="image/*"
+                  onChange={handleUpChange}
+                  required
+                  placeholder="Hosted image URL"
+                />
+                {room.Image && (
+                  <img
+                    src={room.Image}
+                    alt="Preview"
+                    className="image-preview"
+                  />
+                )}
+
+                {/* Inputs */}
+
+                <select
+                  name="Tittle"
+                  value={room.Tittle}
+                  onChange={handleUpChange}
+                  required
+                >
+                  <option value="" disabled>
+                    Select a room title
+                  </option>
+                  <option value="Single Room">Single Room</option>
+                  <option value="Double Room">Double Room</option>
+                  <option value="Studio Apartment">Studio Apartment</option>
+                  <option value="1 BHK">1 BHK</option>
+                  <option value="2 BHK">2 BHK</option>
+                  <option value="3 BHK">3 BHK</option>
+                  <option value="PG (Paying Guest)">PG (Paying Guest)</option>
+                  <option value="Shared Room">Shared Room</option>
+                  <option value="Guest House">Guest House</option>
+                  <option value="Hostel Room">Hostel Room</option>
+                  <option value="Luxury Suite">Luxury Suite</option>
+                </select>
+
+                <select
+                  name="Description"
+                  value={room.Description}
+                  onChange={handleUpChange}
+                >
+                  <option
+                    value=" Multiple beds in one room; suitable for groups, students, or
+                    budget travelers sharing rent."
+                    disabled
+                  >
+                    Select A Room Title
+                  </option>
+                  <option
+                    value="A private room for one person featuring basic amenities,
+                    perfect for solo renters or short stays."
+                  >
+                    A private room for one person featuring basic amenities,
+                    perfect for solo renters or short stays.
+                  </option>
+                  <option
+                    value=" Designed for two people with shared or separate beds,
+                    suitable for couples or roommates."
+                  >
+                    Designed for two people with shared or separate beds,
+                    suitable for couples or roommates.
+                  </option>
+                  <option
+                    value="Spacious room with elegant interiors, upgraded amenities,
+                    and often a great view or nature."
+                  >
+                    Spacious room with elegant interiors, upgraded amenities,
+                    and often a great view or nature.
+                  </option>
+                  <option
+                    value=" Compact, affordable setup with a study area, Wi-Fi, and
+                    furniture, ideal for students."
+                  >
+                    Compact, affordable setup with a study area, Wi-Fi, and
+                    furniture, ideal for students.
+                  </option>
+                  <option
+                    value="Budget-friendly shared accommodation with common bathrooms,
+                    perfect for travelers or students."
+                  >
+                    Budget-friendly shared accommodation with common bathrooms,
+                    perfect for travelers or students.
+                  </option>
+                  <option
+                    value="Premium accommodation with separate bedroom and living
+                    areas, luxurious decor, and extras like a minibar."
+                  >
+                    Premium accommodation with separate bedroom and living
+                    areas, luxurious decor, and extras like a minibar.
+                  </option>
+                  <option
+                    value=" Multiple beds in one room; suitable for groups, students, or
+                    budget travelers sharing rent."
+                  >
+                    Multiple beds in one room; suitable for groups, students, or
+                    budget travelers sharing rent.
+                  </option>
+                  <option
+                    value="High-end unit on the top floor, often with a private
+                    terrace, modern design, and panoramic views."
+                  >
+                    High-end unit on the top floor, often with a private
+                    terrace, modern design, and panoramic views.
+                  </option>
+                  <option
+                    value="Standalone property with garden, parking, high-end
+                    furnishings, and full privacy."
+                  >
+                    Standalone property with garden, parking, high-end
+                    furnishings, and full privacy.
+                  </option>
+                  <option
+                    value="Spacious room or suite suitable for a family, often includes
+                    multiple beds and child-friendly features."
+                  >
+                    Spacious room or suite suitable for a family, often includes
+                    multiple beds and child-friendly features.
+                  </option>
+                  <option
+                    value="Home-like accommodation with privacy and services, ideal for
+                    extended stays or visiting guests."
+                  >
+                    Home-like accommodation with privacy and services, ideal for
+                    extended stays or visiting guests.
+                  </option>
+                  <option value="Custom or uncommon accommodation not listed here; describe the type and features in detail if possible.">
+                    Custom or uncommon accommodation not listed here; describe
+                    the type and features in detail if possible.
+                  </option>
+                </select>
+
+                <select
+                  name="Rating"
+                  value={room.Rating}
+                  onChange={handleUpChange}
+                  placeholder="Rating"
+                  required
+                >
+                  <option value="" disabled>
+                    Select Rating
+                  </option>
+                  <option value="1">⭐ 1 - Poor</option>
+                  <option value="2">⭐⭐ 2 - Fair</option>
+                  <option value="3">⭐⭐⭐ 3 - Good</option>
+                  <option value="4">⭐⭐⭐⭐ 4 - Very Good</option>
+                  <option value="5">⭐⭐⭐⭐⭐ 5 - Excellent</option>
+                </select>
+
+                <select
+                  name="Brand"
+                  value={room.Brand}
+                  onChange={handleUpChange}
+                  className="d-none"
+                >
+                  <option value="Best | Level 3">Best | Level 3</option>
+                  {[" Better | Level 2", "Good | Level 1"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+                  <lebel>Information</lebel>
+                <select
+                  name="Information"
+                  value={room.Information}
+                  onChange={handleUpChange}
+                  required
+                  placeholder="Information"
+                >
+                  <option value="Violence">Violence</option>
+                  {[" No Violence"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+
+                <input
+                  type="text"
+                  name="Category"
+                  value={room.Category}
+                  onChange={handleUpChange}
+                  placeholder="Category"
+                  className="d-none"
+                />
+                <lebel>Availability</lebel>
+                <select
+                  name="Availability"
+                  value={room.Availability}
+                  onChange={handleUpChange}
+                  required
+                  placeholder="Availability"
+                >
+                  <option value="YES">YES</option>
+                  {["NO"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+
+                <label>Wifi Info</label>
+                <select
+                  name="Wifi"
+                  value={room.Wifi}
+                  onChange={handleUpChange}
+                  required
+                  placeholder="Wifi"
+                >
+                  <option disabled value="nor">
+                    Wifi
+                  </option>
+                  <option value="YES">YES</option>
+                  {["NO"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+                <label>Kitchen Info</label>
+                <select
+                  name="Kitchen"
+                  value={room.Kitchen}
+                  onChange={handleUpChange}
+                  required
+                >
+                  <option value="YES">YES</option>
+                  {["NO"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+
+                <label>Toilet Info</label>
+                <select
+                  name="Toilet"
+                  value={room.Toilet}
+                  required
+                  onChange={handleUpChange}
+                >
+                  <option value="YES">YES</option>
+                  {["NO"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+
+                <label>Bill Info</label>
+                <select
+                  name="Bill"
+                  value={room.Bill}
+                  required
+                  onChange={handleUpChange}
+                >
+                  <option value="YES">YES</option>
+                  {["NO"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+
+                <label>Money Return Policy</label>
+                <select
+                  name="ReturnPolicy"
+                  value={room.ReturnPolicy}
+                  onChange={handleUpChange}
+                  required
+                >
+                  <option value="YES">YES</option>
+                  {["3 Day's", "7 Day's", "10 Day's", "15 Day's", "NO"].map(
+                    (state) => (
+                      <option key={state} value={state}>
+                        {state}
+                      </option>
+                    )
+                  )}
+                </select>
+
+                <label>Payment Options</label>
+
+                <select
+                  name="PaymentOptions"
+                  value={room.PaymentOptions}
+                  onChange={handleUpChange}
+                  required
+                >
+                  <option value="Online / Cash">Online / Cash</option>
+                  {["Online", "Cash", "Card"].map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+
+                <label>Old Price / Monthly</label>
+                <input
+                  type="number"
+                  name="OldPrice"
+                  value={room.OldPrice}
+                  onChange={handleUpChange}
+                  placeholder="Old Price"
+                />
+                <label>Current Price / Monthly</label>
+                <input
+                  type="number"
+                  name="Price"
+                  value={room.Price}
+                  onChange={handleUpChange}
+                  placeholder="Current Price"
+                  required
+                />
+
+                <input
+                  type="text"
+                  name="Address"
+                  value={room.Address}
+                  onChange={handleUpChange}
+                  placeholder="Address"
+                  required
+                  className="d-none"
+                />
+
+                <input
+                  type="text"
+                  name="City"
+                  value={room.City}
+                  required
+                  onChange={handleUpChange}
+                  placeholder="City"
+                />
+
+                <input
+                  type="number"
+                  required
+                  name="Pincode"
+                  value={room.Pincode}
+                  onChange={handleUpChange}
+                  placeholder="Pincode"
+                />
+
+                <input
+                  type="text"
+                  name="State"
+                  value={room.State}
+                  required
+                  onChange={handleUpChange}
+                  placeholder="State"
+                />
+
+                <button type="submit" className="submit-btn">
+                  Add Room
+                </button>
+              </form>
+            </div>
           </div>
         )}
         {![
@@ -314,188 +1024,184 @@ const Login = () => {
           "Chart",
           "Complaint",
           "Service",
+          "AddRoom",
+          "EditProfile",
         ].includes(activePage) && <NotFound />}
       </div>
     );
   };
 
-  const location = useLocation();
-  const product = location.state?.product; // Get product data from navigation
-
   return (
     <>
-      <div   className="Adminfix" id="Adminfix">
-        {Object.keys(Data).map((userID) => (
-          <div key={userID}>
-            <h2 className="d-none">{userID}</h2>
-            {Data[userID]
-              .filter(
-                (User) =>
-                  parseFloat(User.Number) === parseInt(mobile) &&
-                  User.Password === password
-              )
-              .map((User, index) => (
-                <div key={index}>
-                  <>
+      <div className="Adminfix" id="Adminfix">
+        {Data.filter(
+          (user) =>
+            parseInt(user.Mobile) === parseInt(mobile) &&
+            user.Password === password
+        ).map((user, index) => (
+          <div key={index}>
+            <h2 className="d-none">{user.Name}</h2>
+            <div key={index}>
+              <>
+                <div
+                  className="flex h-screen w-screen "
+                  id="main-screen"
+                  key={index}
+                >
+                  {/* Sidebar */}
+                  <div
+                    className={`sidebar w-64 bg-white shadow-md absolute h-full ${
+                      sidebarHidden ? "sidebar-hidden" : ""
+                    }`}
+                    id="sidebar"
+                  >
+                    <div className="p-4 flex items-center">
+                      <span className="ml-2 text-xl font-bold text-blue-800">
+                        BEST ROOM
+                      </span>
+                    </div>
+                    <hr></hr>
                     <div
-                      className="flex h-screen w-screen "
-                      id="main-screen"
-                      key={index}
+                      className=" flex items-center"
+                      onClick={() => {
+                        loadPage("Owner");
+                        toggleSidebar();
+                      }}
                     >
-                      {/* Sidebar */}
-                      <div
-                        className={`sidebar w-64 bg-white shadow-md absolute h-full ${
-                          sidebarHidden ? "sidebar-hidden" : ""
-                        }`}
-                        id="sidebar"
-                      >
-                        <div className="p-4 flex items-center">
-                          <span className="ml-2 text-xl font-bold text-blue-800">
-                            BEST ROOM
-                          </span>
-                        </div>
-                        <hr></hr>
-                        <div
-                          className=" flex items-center"
+                      <img
+                        alt="User profile"
+                        className="rounded-full"
+                        height="50"
+                        src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+                        width="50"
+                      />
+                      <div className="nameheader">
+                        <p className="text-blue-900 mt-3 ownername">
+                          {user.Name}
+                        </p>
+                      </div>
+                    </div>
+                    <nav className="mt-4">
+                      <ul>
+                        <li
+                          className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
+                            activePage === "dashboard" ? "active" : ""
+                          }`}
                           onClick={() => {
-                            loadPage("Owner");
+                            loadPage("dashboard");
                             toggleSidebar();
                           }}
                         >
-                          <img
-                            alt="User profile"
-                            className="rounded-full"
-                            height="50"
-                            src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
-                            width="50"
+                          <FaBed className="text-purple-500" icon={<FaBed />} />
+                          <span className="ml-2">Dashboard</span>
+                        </li>
+                        <li
+                          className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
+                            activePage === "Anylatics" ? "active" : ""
+                          }`}
+                          onClick={() => {
+                            loadPage("Anylatics");
+                            toggleSidebar();
+                          }}
+                        >
+                          <FaUsers
+                            className="text-purple-500"
+                            icon={<FaUsers />}
                           />
-                          <div className="nameheader">
-                            <p className="text-blue-900 mt-3 ownername">
-                              {User.FullName}
-                            </p>
-                          </div>
-                        </div>
-                        <nav className="mt-4">
-                          <ul>
-                            <li
-                              className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
-                                activePage === "dashboard" ? "active" : ""
-                              }`}
-                              onClick={() => {
-                                loadPage("dashboard");
-                                toggleSidebar();
-                              }}
-                            >
-                              <FaBed
-                                className="text-purple-500"
-                                icon={<FaBed />}
-                              />
-                              <span className="ml-2">Dashboard</span>
-                            </li>
-                            <li
-                              className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
-                                activePage === "Anylatics" ? "active" : ""
-                              }`}
-                              onClick={() => {
-                                loadPage("Anylatics");
-                                toggleSidebar();
-                              }}
-                            >
-                              <FaUsers
-                                className="text-purple-500"
-                                icon={<FaUsers />}
-                              />
-                              <span className="ml-2">Anylatics</span>
-                            </li>
-                            <li
-                              className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
-                                activePage === "Anylatics" ? "active" : ""
-                              }`}
-                              onClick={() => {
-                                loadPage("Chart");
-                                toggleSidebar();
-                              }}
-                            >
-                              <FaUsers
-                                className="text-purple-500"
-                                icon={<FaUsers />}
-                              />
-                              <span className="ml-2">Chart</span>
-                            </li>
-                            <li
-                              className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
-                                activePage === "complaint" ? "active" : ""
-                              }`}
-                              onClick={() => {
-                                loadPage("Complaint");
-                                toggleSidebar();
-                              }}
-                            >
-                              <PiCurrencyInrFill
-                                className="text-purple-500"
-                                icon={<PiCurrencyInrFill />}
-                              />
-                              <span className="ml-2">Icons</span>
-                            </li>
-                            <li
-                              className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
-                                activePage === "Service" ? "active" : ""
-                              }`}
-                              onClick={() => {
-                                loadPage("Service");
-                                toggleSidebar();
-                              }}
-                            >
-                              <GrServices
-                                className="text-purple-500"
-                                icon={<GrServices />}
-                              />
-                              <span className="ml-2">Service</span>
-                            </li>
-                          </ul>
-                        </nav>
-                        <div className="p-4">
-                          <button
-                            className="auth-button bot"
-                            onClick={toggleSidebar}
-                          >
-                            + ADD ROOM
-                          </button>
-                          <br></br>
-                          {isLogin && (
-                            <>
-                              <br></br>
-                              <button
-                                type="button"
-                                className="auth-button botout"
-                                onClick={handleClearLocalStorage} // Removed ()
-                              >
-                                Log Out !
-                              </button>
-                            </>
-                          )}
-                        </div>
-                      </div>
-                      {/* Main Content */}
-                      <div
-                        className={`flex-1 p-6 content ${
-                          sidebarHidden ? "content-expanded" : "ml-64"
-                        }`}
-                        id="mainContent"
+                          <span className="ml-2">Anylatics</span>
+                        </li>
+                        <li
+                          className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
+                            activePage === "Anylatics" ? "active" : ""
+                          }`}
+                          onClick={() => {
+                            loadPage("Chart");
+                            toggleSidebar();
+                          }}
+                        >
+                          <FaUsers
+                            className="text-purple-500"
+                            icon={<FaUsers />}
+                          />
+                          <span className="ml-2">Chart</span>
+                        </li>
+                        <li
+                          className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
+                            activePage === "complaint" ? "active" : ""
+                          }`}
+                          onClick={() => {
+                            loadPage("Complaint");
+                            toggleSidebar();
+                          }}
+                        >
+                          <PiCurrencyInrFill
+                            className="text-purple-500"
+                            icon={<PiCurrencyInrFill />}
+                          />
+                          <span className="ml-2">Icons</span>
+                        </li>
+                        <li
+                          className={`flex items-center p-2 text-gray-700 hover:bg-gray-200 cursor-pointer ${
+                            activePage === "Service" ? "active" : ""
+                          }`}
+                          onClick={() => {
+                            loadPage("Service");
+                            toggleSidebar();
+                          }}
+                        >
+                          <GrServices
+                            className="text-purple-500"
+                            icon={<GrServices />}
+                          />
+                          <span className="ml-2">Service</span>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div className="p-4">
+                      <button
+                        className="auth-button bot"
+                        onClick={() => {
+                          loadPage("AddRoom");
+                          toggleSidebar();
+                        }}
                       >
-                        {renderContent()}
-                      </div>
+                        + ADD ROOM
+                      </button>
+                      <br></br>
+                      {isLogin && (
+                        <>
+                          <br></br>
+                          <button
+                            type="button"
+                            className="auth-button botout"
+                            onClick={handleClearLocalStorage} // Removed ()
+                          >
+                            Log Out !
+                          </button>
+                        </>
+                      )}
                     </div>
-                  </>
+                  </div>
+                  {/* Main Content */}
+                  <div
+                    className={`flex-1 p-6 content ${
+                      sidebarHidden ? "content-expanded" : "ml-64"
+                    }`}
+                    id="mainContent"
+                  >
+                    {renderContent()}
+                  </div>
                 </div>
-              ))}
+              </>
+            </div>
+            ))
           </div>
         ))}
       </div>
 
       <div className="auth-box">
         <h2 className="auth-title">User Login</h2>
-        <form className="auth-form"  >
+        <form className="auth-form">
           <div>
             <label htmlFor="mobile">Mobile Number</label>
             <input
@@ -534,16 +1240,15 @@ const Login = () => {
             </button>
           </div>
 
-          <button  onClick={handleSubmit} type="submit" className="auth-button">
+          <button onClick={handleSubmit} type="submit" className="auth-button">
             Sign in
           </button>
 
           <p className="auth-toggle">
             Don't have an account?{" "}
             <Link to="/Signup">
-            <button className="auth-link" >
-              Sign up
-            </button></Link>
+              <button className="auth-link">Sign up</button>
+            </Link>
           </p>
         </form>
       </div>

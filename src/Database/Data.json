@@ -16,9 +16,13 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
-    {
+    { "id":"9174750864",
       "image": "https://www.shutterstock.com/image-photo/stylish-interior-design-living-room-260nw-1723139395.jpg",
       "title": "Cozy Double Room",
       "description": "Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King RoomDeluxe King Room Deluxe King Room Deluxe King Room",
@@ -34,7 +38,55 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
+    },
+    {"id":"9174750864",
+      "image": "https://blog.floorcenter.com/wp-content/uploads/2021/04/4-Design-Ideas-for-A-Luxury-Bedroom.jpg",
+      "title": "Cozy Double Room   ",
+      "description": "Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King RoomDeluxe King Room Deluxe King Room Deluxe King Room",
+      "category": "Luxury",
+      "availability": "in Stock",
+      "Wifi": "Yes",
+      "Kitchen": "Yes",
+      "Toilet": "Yes",
+      "Bill": "Yes",
+      "price": "50.00",
+      "oldPrice": "180.00",
+      "rating": 4.8,
+      "brand": "Grand Hotel",
+      "information": "No Vilance",
+      "returnPolicy": "No",
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
+    },
+    {"id":"9174750864",
+      "image": "https://www.shutterstock.com/image-photo/stylish-interior-design-living-room-260nw-1723139395.jpg",
+      "title": "Cozy Double Room",
+      "description": "Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King RoomDeluxe King Room Deluxe King Room Deluxe King Room",
+      "category": "Luxury",
+      "availability": "in Stock",
+      "Wifi": "Yes",
+      "Kitchen": "Yes",
+      "Toilet": "Yes",
+      "Bill": "Yes",
+      "price": "250",
+      "oldPrice": "180.00",
+      "rating": 4.8,
+      "brand": "Grand Hotel",
+      "information": "No Vilance",
+      "returnPolicy": "No",
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://blog.floorcenter.com/wp-content/uploads/2021/04/4-Design-Ideas-for-A-Luxury-Bedroom.jpg",
@@ -52,7 +104,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://www.shutterstock.com/image-photo/stylish-interior-design-living-room-260nw-1723139395.jpg",
@@ -70,43 +126,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
-    },
-    {
-      "image": "https://blog.floorcenter.com/wp-content/uploads/2021/04/4-Design-Ideas-for-A-Luxury-Bedroom.jpg",
-      "title": "Cozy Double Room   ",
-      "description": "Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King RoomDeluxe King Room Deluxe King Room Deluxe King Room",
-      "category": "Luxury",
-      "availability": "in Stock",
-      "Wifi": "Yes",
-      "Kitchen": "Yes",
-      "Toilet": "Yes",
-      "Bill": "Yes",
-      "price": "50.00",
-      "oldPrice": "180.00",
-      "rating": 4.8,
-      "brand": "Grand Hotel",
-      "information": "No Vilance",
-      "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
-    },
-    {
-      "image": "https://www.shutterstock.com/image-photo/stylish-interior-design-living-room-260nw-1723139395.jpg",
-      "title": "Cozy Double Room",
-      "description": "Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King RoomDeluxe King Room Deluxe King Room Deluxe King Room",
-      "category": "Luxury",
-      "availability": "in Stock",
-      "Wifi": "Yes",
-      "Kitchen": "Yes",
-      "Toilet": "Yes",
-      "Bill": "Yes",
-      "price": "250",
-      "oldPrice": "180.00",
-      "rating": 4.8,
-      "brand": "Grand Hotel",
-      "information": "No Vilance",
-      "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": " https://media.istockphoto.com/id/1441823016/photo/modern-living-room-interior-design.jpg?s=612x612&w=0&k=20&c=pxP09YM-4w7u1YyTVUmQb6zBWlh_thP7QSp-CKMhfAs=",
@@ -124,7 +148,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://static.vecteezy.com/system/resources/thumbnails/023/729/656/small/simple-minimalist-living-room-interior-generative-ai-photo.jpg",
@@ -142,7 +170,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwQLv3mfFzEC0WGU4enVRh2woH-GcAPRXIjA&s",
@@ -160,7 +192,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
@@ -178,7 +214,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL9SXd0zwpqTasziB9lLC7JXhniW8LrlErLA&s",
@@ -196,7 +236,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiVY7_3O4OfM6X87Z5PLFZeZyZcYVgOJcZ8A&s",
@@ -214,7 +258,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLEspD5Ify1QBrTxXAwZPGVUV8v49LdCjrrA&s",
@@ -232,7 +280,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjyAZ6uYCvGRBTqTqf7-OZ2PSb8uecwYu3aQ&s",
@@ -250,7 +302,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4b-oJsLCYsQCXjxPlHEkmFninfkIuK0Au0g&s",
@@ -268,14 +324,18 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXS0ir9nIVUMqboXA6KT3y2cEiMLAHggY8pw&s",
       "title": "Executive Suite",
       "description": "Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King Room Deluxe King RoomDeluxe King Room Deluxe King Room Deluxe King Room",
       "category": "Luxury",
-      "availability": "in Stock",
+      "availability": "",
       "Wifi": "Yes",
       "Kitchen": "Yes",
       "Toilet": "Yes",
@@ -286,7 +346,11 @@
       "brand": "Grand Hotel",
       "information": "No Vilance",
       "returnPolicy": "No",
-      "paymentOptions": "Online / Cash"
+      "paymentOptions": "Online / Cash",
+      "Address":"Shrinagar",
+      "City":"Jabalpur",
+      "State":"Madhay Predesh",
+      "Pincode":"483119"
     }
   ]
 }

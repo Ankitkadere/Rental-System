@@ -1,0 +1,107 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.form-wrapper {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.room-form {
+  display: grid;
+  grid-template-columns: 2fr;
+  gap: 1rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  grid-column: span 2;
+}
+
+/* Group inputs side by side */
+@media (min-width: 768px) {
+  .room-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Make image preview span full width */
+.image-preview {
+  grid-column: span 2;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+/* Inputs and selects */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgb(9, 44, 110);
+  background-color: #fff;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Submit button spans full width */
+.submit-btn {
+  grid-column: span 2;
+  padding: 12px;
+  background-color:rgb(10, 45, 110);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .form-title,
+  .submit-btn,
+  .image-preview {
+    grid-column: span 1;
+  }
+  .form-wrapper {
+    width: 95vw;
+    margin: auto;
+    padding: 1rem;
+  }
+}

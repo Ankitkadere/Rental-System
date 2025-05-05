@@ -1,0 +1,111 @@
+/* General Styles */
+
+/* Card Styles */
+.containerregister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  display:none;
+}
+
+.containerregister .card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin:auto;
+  width: 80%;
+  transition: transform 0.3s ease;
+}
+
+.containerregister .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon Styles */
+.containerregister .icon-container {
+  background-color: rgb(7, 29, 102);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  animation: bounce 1s infinite;
+}
+
+.containerregister .check-icon {
+  color: #fff;
+  font-size: 2rem;
+}
+
+/* Title Styles */
+.containerregister .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+/* Message Styles */
+.containerregister .message {
+  color: #718096;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Button Styles */
+.containerregister .dashboard-link {
+  width: 60%;
+  background-color:rgb(7, 45, 102);
+  color: white;
+  padding: 10px 20px;
+  margin: auto;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.containerregister .dashboard-link:hover {
+  background-color:rgb(6, 27, 122);
+  transform: scale(1.05);  color: white;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .containerregister   {
+    padding: 10px;
+  }
+  .containerregister .card {
+    padding: 15px;
+    width: 95%;
+    margin:auto;
+  }
+
+  .containerregister .check-icon {
+    font-size: 2rem;
+  }
+
+  .containerregister .title {
+    font-size: 1.25rem;
+  }
+  .containerregister .dashboard-link:hover {
+    background-color:rgb(10, 26, 99);
+    transform: scale(1.05);  color: white;
+  }
+}

@@ -87,7 +87,6 @@
 .suggestion-item a {
   text-decoration: none;
   color: black;
- 
   font-size: 16px;
 }
 
@@ -114,7 +113,7 @@
   }
 
   .search-input {
-    font-size: 14px;
+    font-size: 18px;
     padding: 10px;
     width: 100%;
     border: 1px solid #ccc;
@@ -122,7 +121,7 @@
   }
 
   .search-icon {
-    font-size: 16px;
+    font-size: 18px;
     position: absolute;
     right: 6%;
     top: 50%;
@@ -152,5 +151,72 @@
 
   .search-icon {
     font-size: 20px;
+  }
+}
+
+//Items boxes
+
+/* Main container */
+.divset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+  background-color: transperrent;
+  border-radius: 10px;
+  width: 100%; /* Adjust width for responsiveness */
+  margin: 10px auto; /* Center it on the page */
+}
+
+/* Links container */
+.divset .divlink {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transperrent;
+  padding: 30px 30px;
+  border-radius: 8px;
+  flex-wrap: wrap; /* Ensures links wrap on small screens */
+  width: 100%; /* Make it responsive */
+}
+
+/* Links */
+.divset .divlink a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0divset 0.3s ease-in-out;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: rgb(219, 219, 219);
+}
+
+/* Hover effect */
+.divset .divlink a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .divset {
+    width: 95%; /* Adjust width for smaller screens */
+    margin-top: 30%;
+  }
+
+  .divset .divlink {
+    flex-direction: row; /* Stack links vertically on small screens */
+    gap: 10px;
+    text-align: center;
+    gap: 10px;
+    justify-content: space-around;
+  }
+
+  .divset .divlink a {
+    font-size: 14px; /* Reduce font size for better mobile view */
+    padding: 8px;
   }
 }

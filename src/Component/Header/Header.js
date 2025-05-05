@@ -28,7 +28,7 @@ const Header = () => {
       </header>
 
       {/* Navigation */}
-    </>
+           </>
   );
 };
 

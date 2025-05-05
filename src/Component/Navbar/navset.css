@@ -1,0 +1,254 @@
+/* Base Styling */
+body,
+.font-sans {
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Top Bar */
+.font-sans .top-bar {
+  background-color: #f3f4f6;
+  text-align: center;
+  padding: 0.5rem;
+
+  font-size: 0.875rem;
+}
+
+/* Header */
+.font-sans .header {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.font-sans .header-container {
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.font-sans .logo-section {
+  display: flex;  border: solid red 10px;
+  align-items: center;
+}
+
+.font-sans .logo-img {
+  height: 40px;
+  width: 40px;
+}
+img {
+  width: 40px;
+}
+.font-sans .brand-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.font-sans .brand-sub {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-left: 0.25rem;
+}
+
+.font-sans .search-bar {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.font-sans .search-bar input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.font-sans .user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.font-sans .user-text {
+  font-size: 0.875rem;
+}
+
+.font-sans .user-text .email {
+  color: #6b7280;
+}
+
+.font-sans .user-icons i {
+  color: #6b7280;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Navigation */
+.font-sans .nav {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.font-sans .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.font-sans .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.font-sans .nav-links a,
+.font-sans .nav-links button {
+  text-decoration: none;
+  color: #374151;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.font-sans .delivery-note {
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Main Banner */
+.font-sans .main-section {
+  background-color: #f9fafb;
+  padding: 2rem 0;
+}
+
+.font-sans .main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.font-sans .promo-box {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.font-sans .promo-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.font-sans .nav-arrows {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 3;
+}
+
+.font-sans .nav-arrows button {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+}
+
+.font-sans .promo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #1f2937, transparent);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.font-sans .promo-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.font-sans .promo-tag {
+  background-color: #10b981;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.font-sans .promo-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.font-sans .promo-desc {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.font-sans .promo-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.font-sans .shop-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .font-sans .header-container,
+  .font-sans .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .font-sans .search-bar {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .font-sans .promo-heading {
+    font-size: 1.5rem;
+  }
+
+  .font-sans .promo-desc,
+  .font-sans .promo-price {
+    font-size: 1rem;
+  }
+}

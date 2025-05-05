@@ -5,10 +5,11 @@ import Smallbanner from "../../Component/Smallanner/Sbanner";
 import Categories from "../../Component/Categery/Categery";
 import Roomlist from "../Productlist/Roomlist";
 import RoomSearch from "../../Component/Search Page/Main Room Find/Roomfind";
-
+ 
 const Home = () => {
   return (
     <>
+ 
       {/*Slider */}
       <UncontrolledExample />
        {/*Room Search */}
@@ -16,7 +17,7 @@ const Home = () => {
       {/*Productlist*/}
       <Roomlist />
       {/*Smal  Banner*/}
-      <Smallbanner />
+     
       {/*Productlist*/}
       <Roomlist />
       {/*Categery*/}

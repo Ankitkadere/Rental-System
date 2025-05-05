@@ -4,7 +4,7 @@
   display: flex;
   gap: 20px;
   padding: 20px;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 12px;
 }
 
@@ -29,7 +29,6 @@
   background-color: #ffffff;
   padding: 20px;
   border-radius: 12px;
-  
 }
 
 /* Header Styles */
@@ -97,30 +96,41 @@
   margin-left: 1%;
 }
 
+.product-variantsaddress ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; /* correct property */
+  color: black;
+  gap: 10px;
+}
+
 /* Product Variants */
-.product-variants {
+.product-address {
   margin-bottom: 6px;
 }
 
-.product-variants h3 {
-  font-size: 1.25rem;
+.product-address h3 {
+  font-size: 1.5rem;
   font-weight: bold;
   color: #2d3748;
   margin-bottom: 8px;
 }
 
-.product-variants ul {
+.product-address ul {
   list-style-type: none;
   padding-left: 0;
   display: flex;
   flex-box: wrap;
 }
 
-.product-variants li {
-  font-size: 16px;
+.product-address li {
+  width: auto;
+  font-size: 18px;
   color: #4a5568;
   margin-bottom: 6px;
-  margin: 2px 4px;
+  margin: 2px 0px;
   border-radius: 20px;
   flex-box: wrap;
   padding: 0px 8px;
@@ -170,7 +180,6 @@
 }
 /* Shipping Information */
 .shipping-info {
-  
   margin-bottom: 20px;
   text-align: center;
 }
@@ -356,11 +365,18 @@
     width: 100%;
     margin-bottom: 10px;
   }
+  .product-info {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 2px;
+    padding-right: 8px;
+    border-radius: 12px;
+  }
 }
 
 @media (max-width: 480px) {
   .product-details {
-    padding: 10px;
+    padding: 8px;
   }
   .specifications li {
     font-size: 16px;
@@ -398,14 +414,14 @@
     background: white;
     border-top-right-radius: 10px; /* Corrected border radius */
     border-top-left-radius: 10px; /* Corrected border radius */
-    padding: 8px 4px;
+    padding: 3px 4px;
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
   }
   .cta-buttons .buybutton {
     width: 95%;
-    padding: 6px 0px;
+    padding: 4px 0px;
     box-shadow: 0px 2px 5px black;
   }
   .productpolicy .shipping-info,
@@ -415,6 +431,7 @@
     background: white;
     width: 100%;
     border-radius: 20px;
-    text-align: center; background: rgb(241, 241, 241);
+    text-align: center;
+    background: rgb(241, 241, 241);
   }
 }

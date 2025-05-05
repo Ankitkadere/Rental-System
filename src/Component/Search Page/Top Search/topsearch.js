@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import { useEffect, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
-const  Search = () => {
+const Search = () => {
   const [query, setQuery] = useState("");
   const [suggestionsVisible, setSuggestionsVisible] = useState(false);
   const [url, setUrl] = useState("");
@@ -22,10 +22,10 @@ const  Search = () => {
     { name: "Bungalow", link: "/bungalow" },
     { name: "Loft", link: "/loft" },
     { name: "Dormitory", link: "/dormitory" },
-    { name: "Accessible Room", link: "/accessible-room" }
+    { name: "Accessible Room", link: "/accessible-room" },
   ];
 
-  const filteredRoomTypes = roomTypes.filter(roomType =>
+  const filteredRoomTypes = roomTypes.filter((roomType) =>
     roomType.name.toLowerCase().startsWith(query.toLowerCase())
   );
 
@@ -40,7 +40,7 @@ const  Search = () => {
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" || event.keyCode === 13) {
       handleSearchClick();
     }
   };
@@ -50,11 +50,17 @@ const  Search = () => {
       mobileInputRef.current.focus();
     }
   }, []);
+
+  const clearInput = () => {
+    document.getElementById("searchInput").value = "";
+  };
+
   return (
     <div className="search-container">
-      <h1 className="search-title">Search For Better Result</h1>
+      <h1 className="search-title" >Search For Better Result</h1>
       <div className="search-box">
         <input
+          id="earchInput"
           ref={mobileInputRef} // Attach ref here
           type="text"
           value={query}
@@ -63,17 +69,21 @@ const  Search = () => {
           onKeyDown={handleKeyPress}
           placeholder="Type here for search..."
         />
-        <FaSearch className="search-icon" onClick={handleSearchClick}/>
+        <FaSearch className="search-icon" onClick={handleSearchClick} />
         {suggestionsVisible && (
           <ul className="suggestions-list">
             {filteredRoomTypes.map((roomType, index) => {
-              const startIndex = roomType.name.toLowerCase().indexOf(query.toLowerCase());
+              const startIndex = roomType.name
+                .toLowerCase()
+                .indexOf(query.toLowerCase());
               const endIndex = startIndex + query.length;
               return (
                 <li key={index} className="suggestion-item">
                   <a href={roomType.link}>
                     {roomType.name.substring(0, startIndex)}
-                    <span className="highlight">{roomType.name.substring(startIndex, endIndex)}</span>
+                    <span className="highlight">
+                      {roomType.name.substring(startIndex, endIndex)}
+                    </span>
                     {roomType.name.substring(endIndex)}
                   </a>
                 </li>
@@ -81,6 +91,24 @@ const  Search = () => {
             })}
           </ul>
         )}
+      </div>{" "}
+      <div className="divset">
+        <div className="divlink">
+          <a onClick={clearInput} href="/Singleroom">Signle Room</a>
+          <a onClick={clearInput} href="/Doubleroom">Double Room</a>{" "}
+          <a onClick={clearInput} href="/Studentroom">Student Room</a>
+        </div>
+        <div className="divlink">
+          <a onClick={clearInput} href="/Hostelroom">Hostel Room</a>
+          <a  onClick={clearInput} href="/Familyroom">Family Room</a>    
+          <a  onClick={clearInput} href="/Coupleroom">Couple Room</a>
+          <a  onClick={clearInput} href="/Login">Login</a>
+        </div>{" "}
+        <div className="divlink">
+          <a  onClick={clearInput} href="/Signup">Owner Registration</a>
+          <a  onClick={clearInput} href="/Doubleroom">Help Desk</a>{" "}
+          <a  onClick={clearInput} href="/Studentroom">Add Services</a>
+        </div>
       </div>
     </div>
   );

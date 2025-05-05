@@ -57,6 +57,14 @@
   font-size: 1rem;
   transition: border 0.3s ease-in-out;
 }
+.auth-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s ease-in-out;
+}
 
 .auth-form input:focus ,select:focus{
   outline: none;
@@ -76,7 +84,7 @@
   align-items: center;
 }
 
-.checkbox-group input {
+.checkbox-group input ,.checkbox-group select{
   width: 16px;
   height: 16px;
 }

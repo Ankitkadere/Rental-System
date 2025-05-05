@@ -1,13 +1,13 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom"; // Import useLocation
 import "../Fullproductdetails/Fullpage.css";
-import Unablepage from '../../Component/Pagenotfound/Notfound';
+import Unablepage from "../../Component/Pagenotfound/Notfound";
 const ProductDetailsPage = () => {
-  const location = useLocation(); 
+  const location = useLocation();
   const product = location.state?.product; // Get product data from navigation
 
   if (!product) {
-    return <Unablepage/>;
+    return <Unablepage />;
   }
 
   return (
@@ -24,7 +24,6 @@ const ProductDetailsPage = () => {
             <p className="availability">: {product.availability}</p>
           </div>
           <div className="specifications">
-            
             <ul>
               <li>Wifi: {product.Wifi}</li>
               <li>Kitchen: {product.Kitchen}</li>
@@ -33,19 +32,21 @@ const ProductDetailsPage = () => {
             </ul>
           </div>
 
-          <div className="product-variants">
+          <div className="product-address">
             <h3>Address</h3>
+
             <ul>
-              {product.variants?.map((variant, index) => (
-                <li key={index}>{variant}</li>
-              ))}
+              <li>{product.Address},</li>
+              <li> {product.City},</li>
+              <li> {product.State},</li>
+              <li> {product.Pincode}</li>
             </ul>
           </div>
 
           <div className="cta-buttons">
-            <Link to="/ProductBuy" className="buybutton">
+            <a href={`tel:${product.Mobile}`} className="buybutton">
               Book Now
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -72,7 +73,6 @@ const ProductDetailsPage = () => {
           </div>
         </div>
         <div className="related-products">
-          <h3>Related Products</h3>
           <ul>
             {product.relatedProducts?.map((related, index) => (
               <li key={index}>
